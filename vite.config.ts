@@ -7,6 +7,7 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
+    base: './', // 关键：使用相对路径，确保在 GitHub Pages 子目录下资源加载正确
     plugins: [react(), tailwindcss(), viteSingleFile()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
