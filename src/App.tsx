@@ -43,7 +43,7 @@ const TextOpacityRow = ({ label, opacity, className }: { label: string, opacity:
 
 const RadiusCard = ({ size, px, twClass, desc, isCircle = false, isPill = false }: { size: string, px: string, twClass: string, desc: string, isCircle?: boolean, isPill?: boolean }) => (
   <div className="flex items-center gap-6 p-4 border-b border-border-subtle/50 last:border-0 hover:bg-bg-elevated-2/50 transition-colors rounded-xl">
-    <div className="w-20 h-20 flex items-center justify-center bg-bg-base  shrink-0">
+    <div className="w-20 h-20 flex items-center justify-center bg-bg-canvas  shrink-0">
       <div className={`border-2 border-primary ${twClass} ${isCircle ? 'w-10 h-10' : isPill ? 'w-12 h-6' : 'w-10 h-10'} bg-primary/10`}></div>
     </div>
     <div>
@@ -52,7 +52,7 @@ const RadiusCard = ({ size, px, twClass, desc, isCircle = false, isPill = false 
         <span className="font-mono text-sm text-primary">{px}</span>
       </div>
       <p className="text-sm text-text-50">{desc}</p>
-      <code className="text-xs text-text-50 bg-bg-base px-2 py-1 rounded mt-2 inline-block ">{twClass}</code>
+      <code className="text-xs text-text-50 bg-bg-canvas px-2 py-1 rounded mt-2 inline-block ">{twClass}</code>
     </div>
   </div>
 );
@@ -78,7 +78,7 @@ export default function App() {
   const [activeAmount10_3, setActiveAmount10_3] = useState<string | null>('$100');
 
   return (
-    <div className="min-h-screen bg-bg-base p-6 md:p-12 font-sans selection:bg-primary/30">
+    <div className="min-h-screen bg-bg-canvas p-6 md:p-12 font-sans selection:bg-primary/30">
       <div className="max-w-6xl mx-auto space-y-20">
         
         {/* Header */}
@@ -112,7 +112,7 @@ export default function App() {
                   为了确保全站垂直律动的严谨性，所有字号的行高均遵循以下数学公式进行计算，确保在不同尺寸下都能保持最佳的阅读舒适度。
                 </p>
               </div>
-              <div className="bg-bg-base p-4 rounded-lg border border-border-subtle flex flex-col items-center justify-center min-w-[240px]">
+              <div className="bg-bg-canvas p-4 rounded-lg border border-border-subtle flex flex-col items-center justify-center min-w-[240px]">
                 <div className="text-xs text-text-50 uppercase tracking-widest mb-1">Calculation Formula</div>
                 <div className="text-2xl font-black text-primary tracking-tighter">
                   Y = 2 × Ceil(X / 10) + X
@@ -135,7 +135,7 @@ export default function App() {
                 { x: 36, y: 44 },
                 { x: 48, y: 58 }
               ].map((item) => (
-                <div key={item.x} className="bg-bg-base/50 border border-border-subtle/30 rounded-lg p-3 flex flex-col items-center">
+                <div key={item.x} className="bg-bg-canvas/50 border border-border-subtle/30 rounded-lg p-3 flex flex-col items-center">
                   <div className="text-[10px] text-text-25 uppercase font-bold mb-1">{item.x}px</div>
                   <div className="text-lg font-black text-text-100">{item.y}px</div>
                   <div className="text-[9px] text-primary/60 mt-1 font-mono">LH: {item.y}</div>
@@ -232,7 +232,7 @@ export default function App() {
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-6">基础结构 (Structural)</h3>
               <div className="grid grid-cols-2 gap-4">
-                <ColorSwatch name="背景色 (Base)" hex="#141414" className="bg-bg-base border border-border-strong" />
+                <ColorSwatch name="背景色 (Base)" hex="#141414" className="bg-bg-canvas border border-border-strong" />
                 <ColorSwatch name="顶部TAB (Nav)" hex="#0C0C0C" className="bg-bg-nav" />
                 <ColorSwatch name="底部标签 (Tab)" hex="#202020" className="bg-bg-tab" />
               </div>
@@ -243,7 +243,7 @@ export default function App() {
               <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-6 flex items-center gap-2">
                 <Layers size={16} /> 浮层体系 (Elevation Stack)
               </h3>
-              <div className="bg-bg-base p-8 rounded-2xl  flex flex-col justify-center min-h-[300px]">
+              <div className="bg-bg-canvas p-8 rounded-2xl  flex flex-col justify-center min-h-[300px]">
                 <ElevationCard level="背景上一层 (Level 1)" hex="#262626" className="bg-bg-elevated-1 h-24" zIndex={0} />
                 <ElevationCard level="背景上二层 (Level 2)" hex="#373737" className="bg-bg-elevated-2 h-24" zIndex={1} />
                 <ElevationCard level="背景上三层 (Level 3)" hex="#474747" className="bg-bg-elevated-3 h-24" zIndex={2} />
@@ -264,7 +264,7 @@ export default function App() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <ColorSwatch name="基准色 (Primary)" hex="#FF6C44" className="bg-primary" />
                 <ColorSwatch name="点击 (Active)" hex="#EA3D0F" className="bg-primary-active" />
-                <ColorSwatch name="暗色背景 (Dark Bg)" hex="#3D1A10" className="bg-primary-light" textColor="text-primary" />
+                <ColorSwatch name="暗色背景 (Dark Bg)" hex="#3D1A10" className="bg-primary-soft" textColor="text-primary" />
                 <div className="flex flex-col gap-2">
                   <div className="h-24 w-full rounded-xl shadow-lg flex items-end p-3 " style={{ background: 'linear-gradient(to bottom, #FF6C44 0%, #EA3D0F 100%)' }}>
                     <span className="font-mono text-xs font-semibold text-white">Gradient</span>
@@ -280,7 +280,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4">
                   <ColorSwatch name="Base" hex="#52B82A" className="bg-success" />
                   <ColorSwatch name="Active" hex="#419421" className="bg-success-active" />
-                  <ColorSwatch name="Dark Bg" hex="#1A3010" className="bg-success-light" textColor="text-success" />
+                  <ColorSwatch name="Dark Bg" hex="#1A3010" className="bg-success-soft" textColor="text-success" />
                 </div>
               </div>
               <div>
@@ -288,7 +288,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4">
                   <ColorSwatch name="Base" hex="#D92D20" className="bg-error" />
                   <ColorSwatch name="Active" hex="#B42318" className="bg-error-active" />
-                  <ColorSwatch name="Dark Bg" hex="#3D100C" className="bg-error-light" textColor="text-error" />
+                  <ColorSwatch name="Dark Bg" hex="#3D100C" className="bg-error-soft" textColor="text-error" />
                 </div>
               </div>
             </div>
@@ -386,7 +386,7 @@ export default function App() {
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-bg-elevated-3 rounded-full shrink-0 relative">
                       <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-[1px] bg-primary/50"></div>
-                      <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-[10px] text-primary font-mono bg-bg-base px-1 rounded translate-x-1/2 -translate-y-full">gap-4 (16px)</div>
+                      <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-[10px] text-primary font-mono bg-bg-canvas px-1 rounded translate-x-1/2 -translate-y-full">gap-4 (16px)</div>
                     </div>
                     <div className="flex-1 space-y-2 relative">
                       <div className="h-4 bg-bg-elevated-3 rounded w-3/4"></div>
@@ -465,7 +465,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
                         <div className="absolute inset-0 flex items-center justify-center text-text-100 font-bold text-sm">封面</div>
                       </div>
-                      <div className="text-xs font-mono text-text-50 bg-bg-base px-2 py-1 rounded  text-center">100 x 134</div>
+                      <div className="text-xs font-mono text-text-50 bg-bg-canvas px-2 py-1 rounded  text-center">100 x 134</div>
                     </div>
 
                     {/* Desktop Size */}
@@ -474,7 +474,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
                         <div className="absolute inset-0 flex items-center justify-center text-text-100 font-bold text-base">封面</div>
                       </div>
-                      <div className="text-xs font-mono text-text-50 bg-bg-base px-2 py-1 rounded  text-center">118 x 158</div>
+                      <div className="text-xs font-mono text-text-50 bg-bg-canvas px-2 py-1 rounded  text-center">118 x 158</div>
                     </div>
                   </div>
                 </div>
@@ -483,7 +483,7 @@ export default function App() {
                 <div>
                   <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4 border-b border-border-subtle pb-2">流式响应式栅格 (Fluid Grid)</h4>
                   <p className="text-xs text-text-50 mb-4">缩放浏览器窗口，观察卡片如何在不同断点下自适应宽度，同时保持高度比例完美一致。</p>
-                  <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 p-4 md:p-6 bg-bg-base rounded-xl ">
+                  <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 p-4 md:p-6 bg-bg-canvas rounded-xl ">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div key={i} className="w-full aspect-[100/134] bg-bg-elevated-2 rounded-xl  relative overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors shadow-md hover:shadow-primary/20 hover:-translate-y-1 duration-300">
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
@@ -518,8 +518,8 @@ export default function App() {
                   <thead>
                     <tr className="border-b border-border-subtle text-xs text-text-50 uppercase tracking-wider">
                       <th className="pb-3 font-bold w-24">规格 (Size)</th>
-                      <th className="pb-3 font-bold w-24">高度 (Height)</th>
-                      <th className="pb-3 font-bold w-32">字号 (Text)</th>
+                      <th className="pb-3 font-bold w-32">高度 (Height)</th>
+                      <th className="pb-3 font-bold w-48">字号 (Text)</th>
                       <th className="pb-3 font-bold w-32">内边距 (PX)</th>
                       <th className="pb-3 font-bold">使用场景 (Usage)</th>
                       <th className="pb-3 font-bold text-right">示例 (Demo)</th>
@@ -529,41 +529,41 @@ export default function App() {
                     <tr>
                       <td className="py-4 font-black text-primary">Large (L)</td>
                       <td className="py-4 font-mono text-sm text-text-100">48px (h-12)</td>
-                      <td className="py-4 font-mono text-sm text-text-100">16px Bold</td>
+                      <td className="py-4 font-mono text-sm text-text-100">16px Bold / 24px</td>
                       <td className="py-4 font-mono text-sm text-text-100">24px (px-6)</td>
                       <td className="py-4 text-sm text-text-50">全局主行动点 (Main CTA)、登录注册、底部悬浮操作区。</td>
                       <td className="py-4 text-right">
-                        <button className="h-12 px-6 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-[16px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button L</button>
+                        <button className="h-12 px-6 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-[16px] leading-[24px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button L</button>
                       </td>
                     </tr>
                     <tr>
                       <td className="py-4 font-black text-primary">Medium (M)</td>
                       <td className="py-4 font-mono text-sm text-text-100">40px (h-10)</td>
-                      <td className="py-4 font-mono text-sm text-text-100">14px Bold</td>
+                      <td className="py-4 font-mono text-sm text-text-100">14px Bold / 20px</td>
                       <td className="py-4 font-mono text-sm text-text-100">16px (px-4)</td>
                       <td className="py-4 text-sm text-text-50">标准按钮。用于大多数表单提交、弹窗确认/取消、卡片主操作。</td>
                       <td className="py-4 text-right">
-                        <button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-[14px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button M</button>
+                        <button className="h-10 px-4 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-[14px] leading-[20px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button M</button>
                       </td>
                     </tr>
                     <tr>
                       <td className="py-4 font-black text-primary">Small (S)</td>
                       <td className="py-4 font-mono text-sm text-text-100">32px (h-8)</td>
-                      <td className="py-4 font-mono text-sm text-text-100">12px Bold</td>
+                      <td className="py-4 font-mono text-sm text-text-100">12px Bold / 16px</td>
                       <td className="py-4 font-mono text-sm text-text-100">12px (px-3)</td>
                       <td className="py-4 text-sm text-text-50">局部操作。如列表项跟随按钮、表格内操作、次级筛选器。</td>
                       <td className="py-4 text-right">
-                        <button className="h-8 px-3 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-md text-[12px] shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button S</button>
+                        <button className="h-8 px-3 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-md text-[12px] leading-[16px] shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button S</button>
                       </td>
                     </tr>
                     <tr>
                       <td className="py-4 font-black text-primary">X-Small (XS)</td>
                       <td className="py-4 font-mono text-sm text-text-100">24px (h-6)</td>
-                      <td className="py-4 font-mono text-sm text-text-100">11px Bold</td>
+                      <td className="py-4 font-mono text-sm text-text-100">11px Bold / 14px</td>
                       <td className="py-4 font-mono text-sm text-text-100">8px (px-2)</td>
                       <td className="py-4 text-sm text-text-50">极致紧凑场景。如 Tag 标签式按钮、极小卡片内的附加操作。</td>
                       <td className="py-4 text-right">
-                        <button className="h-6 px-2 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded text-tiny shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Btn XS</button>
+                        <button className="h-6 px-2 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded text-[11px] leading-[14px] shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Btn XS</button>
                       </td>
                     </tr>
                   </tbody>
@@ -595,11 +595,11 @@ export default function App() {
                     <div className="font-bold text-text-100">Primary CTA</div>
                     <div className="text-xs text-text-50">渐变强调，全局唯一</div>
                   </div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)]">Primary</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-primary)] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)]">Primary</button></div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#FF8566] to-[#F0552D] text-white font-bold rounded-lg text-sm shadow-[0_0_20px_rgba(255,108,68,0.5)]">Hover</button></div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#E65A33] to-[#D13008] text-white font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75 shadow-[0_0_10px_rgba(255,108,68,0.4)]">Active</button></div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active text-white font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
-                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)] hover:shadow-[0_0_20px_rgba(255,108,68,0.5)] active:shadow-[0_0_10px_rgba(255,108,68,0.4)] active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-primary)] text-white font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)] hover:shadow-[0_0_20px_rgba(255,108,68,0.5)] active:shadow-[0_0_10px_rgba(255,108,68,0.4)] active:scale-[0.97] transition-all duration-75">Try Me</button></div>
                 </div>
 
                 {/* Secondary */}
@@ -646,10 +646,10 @@ export default function App() {
                     <div className="h-24 bg-bg-elevated-3 rounded-xl mb-4 flex items-center justify-center text-text-50 text-sm">Content Area</div>
                     <div className="flex gap-3">
                       <button className="flex-1 h-10 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 text-text-100 font-bold rounded-xl text-sm active:scale-[0.97] transition-all duration-75">取消</button>
-                      <button className="flex-1 h-10 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">确认提交</button>
+                      <button className="flex-1 h-10 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">确认提交</button>
                     </div>
                   </div>
-                  <div className="text-xs text-text-50 bg-bg-base p-3 rounded-lg ">
+                  <div className="text-xs text-text-50 bg-bg-canvas p-3 rounded-lg ">
                     <span className="text-success font-bold">正确示范：</span><br/>
                     容器圆角 16px (2xl)，Padding 16px (p-4)。<br/>
                     按钮圆角应为 16 - 16 = 0？不，当计算结果 ≤0 时，取最小值 4px 或 8px。这里为了视觉饱满，容器内部统一使用了 <code className="text-primary">12px (xl)</code>，按钮也必须跟随使用 <code className="text-primary">12px (xl)</code>。
@@ -661,9 +661,9 @@ export default function App() {
                   <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">场景 B: 胶囊型容器 (如搜索/筛选)</h4>
                   <div className="bg-bg-elevated-2 p-1.5 rounded-full  flex items-center mt-4">
                     <div className="flex-1 px-4 text-text-50 text-sm">输入搜索内容...</div>
-                    <button className="h-10 px-6 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-full text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">搜索</button>
+                    <button className="h-10 px-6 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-full text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">搜索</button>
                   </div>
-                  <div className="text-xs text-text-50 bg-bg-base p-3 rounded-lg  mt-4">
+                  <div className="text-xs text-text-50 bg-bg-canvas p-3 rounded-lg  mt-4">
                     <span className="text-success font-bold">正确示范：</span><br/>
                     容器是 Pill (999px) 全圆角。<br/>
                     内部的按钮**必须**也是 Pill (999px) 全圆角，形成完美的嵌套。绝对禁止在胶囊容器里放一个 8px 圆角的按钮。
@@ -737,7 +737,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="relative h-40 bg-bg-base rounded-xl  overflow-hidden">
+                <div className="relative h-40 bg-bg-canvas rounded-xl  overflow-hidden">
                   <div className="absolute inset-x-0 top-0 h-14 bg-bg-nav/80 backdrop-blur-md border-b border-border-subtle flex items-center justify-between px-4 z-10">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded bg-gradient-to-br from-primary to-primary-active flex items-center justify-center text-white font-black text-xs">RN</div>
@@ -775,7 +775,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="relative h-40 bg-bg-base rounded-xl  overflow-hidden flex flex-col justify-end">
+                <div className="relative h-40 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col justify-end">
                   <div className="h-16 bg-bg-tab border-t border-border-subtle flex items-center justify-around px-2 pb-safe">
                     <div className="flex flex-col items-center gap-1 cursor-pointer">
                       <Home className="w-6 h-6 text-primary" />
@@ -812,7 +812,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="p-6 bg-bg-base rounded-xl  flex items-center justify-center">
+                <div className="p-6 bg-bg-canvas rounded-xl  flex items-center justify-center">
                   <div className="w-full max-w-sm h-10 bg-bg-elevated-2 rounded-full  flex items-center px-4 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
                     <Search className="w-4 h-4 text-text-50 mr-2" />
                     <input type="text" placeholder="搜索游戏、赛事..." className="flex-1 bg-transparent border-none outline-none text-sm text-text-100 placeholder:text-text-50" />
@@ -837,7 +837,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="p-6 bg-bg-base rounded-xl  flex flex-col items-center justify-center h-48 relative">
+                <div className="p-6 bg-bg-canvas rounded-xl  flex flex-col items-center justify-center h-48 relative">
                   {/* Trigger */}
                   <button className="h-10 px-4 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 rounded-lg flex items-center gap-2 text-sm font-medium text-text-100 active:scale-[0.97] transition-all duration-75">
                     全部游戏类型 <ChevronDown className="w-4 h-4 text-text-50" />
@@ -875,7 +875,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="relative h-64 bg-bg-base rounded-xl  overflow-hidden flex items-center justify-center">
+                <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
                   <div className="relative z-20 w-64 bg-bg-elevated-2 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-5 flex flex-col gap-4">
                     <div className="text-center space-y-2">
@@ -883,8 +883,8 @@ export default function App() {
                       <p className="text-xs text-text-50">退出后将无法接收最新的赛事通知和中奖信息。</p>
                     </div>
                     <div className="flex gap-3 mt-2">
-                      <button className="flex-1 h-10 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 text-text-100 font-bold rounded-xl text-sm active:scale-[0.97] transition-all duration-75">取消</button>
-                      <button className="flex-1 h-10 bg-error text-white font-bold rounded-xl text-sm hover:bg-error/90 active:scale-[0.97] transition-all duration-75 shadow-lg shadow-error/20">确认退出</button>
+                      <button className="flex-1 h-10 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 text-text-100 font-bold rounded-xl text-[14px] leading-[20px] active:scale-[0.97] transition-all duration-75">取消</button>
+                      <button className="flex-1 h-10 bg-error text-white font-bold rounded-xl text-[14px] leading-[20px] hover:bg-error/90 active:scale-[0.97] transition-all duration-75 shadow-lg shadow-error/20">确认退出</button>
                     </div>
                   </div>
                 </div>
@@ -906,7 +906,7 @@ export default function App() {
                 </h3>
                 
                 {/* Demo */}
-                <div className="relative h-64 bg-bg-base rounded-xl  overflow-hidden flex flex-col justify-end">
+                <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col justify-end">
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
                   <div className="relative z-20 w-full bg-bg-elevated-2 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] p-6 pt-3 flex flex-col gap-4">
                     {/* Drag Handle */}
@@ -932,7 +932,7 @@ export default function App() {
                         </button>
                       ))}
                     </div>
-                    <button className="w-full h-12 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-base mt-2 shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">立即充值</button>
+                    <button className="w-full h-12 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-base mt-2 shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">立即充值</button>
                   </div>
                 </div>
 
@@ -960,7 +960,7 @@ export default function App() {
                     <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
                       <Square className="w-4 h-4 text-primary" /> 中心弹窗 (Center Modal)
                     </h4>
-                    <div className="relative h-64 bg-bg-base rounded-xl  overflow-hidden flex items-center justify-center">
+                    <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex items-center justify-center">
                       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
                       <div className="relative z-20 w-[80%] max-w-[280px] bg-bg-elevated-2 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] flex flex-col max-h-[80%]">
                         <div className="p-4 border-b border-border-subtle shrink-0">
@@ -972,7 +972,7 @@ export default function App() {
                           <p>滚动：内容过多时，头部和底部操作区固定，中间内容区滚动 (<code className="text-primary">overflow-y-auto</code>)。</p>
                         </div>
                         <div className="p-3 border-t border-border-subtle shrink-0 flex justify-center">
-                          <button className="w-full h-8 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white rounded-lg text-xs font-bold shadow-md shadow-primary/20 active:scale-[0.97] transition-all duration-75">确定</button>
+                          <button className="w-full h-8 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white rounded-lg text-xs font-bold shadow-md shadow-primary/20 active:scale-[0.97] transition-all duration-75">确定</button>
                         </div>
                       </div>
                     </div>
@@ -983,7 +983,7 @@ export default function App() {
                     <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
                       <Info className="w-4 h-4 text-primary" /> 轻提示 (Toast / Notification)
                     </h4>
-                    <div className="relative h-64 bg-bg-base rounded-xl  overflow-hidden flex flex-col items-center justify-start pt-8 gap-4">
+                    <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col items-center justify-start pt-8 gap-4">
                       {/* Single line toast */}
                       <div className="w-[90%] max-w-[300px] min-h-[48px] bg-bg-elevated-3 rounded-xl  shadow-lg flex items-center px-4">
                         <CheckCircle2 className="w-4 h-4 text-success shrink-0 mr-2" />
@@ -1007,7 +1007,7 @@ export default function App() {
                     <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
                       <Layers className="w-4 h-4 text-primary" /> 底部抽屉 (Bottom Sheet)
                     </h4>
-                    <div className="relative h-64 bg-bg-base rounded-xl  overflow-hidden flex flex-col justify-end">
+                    <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col justify-end">
                       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
                       <div className="relative z-20 w-full bg-bg-elevated-2 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] flex flex-col h-[85%]">
                         <div className="w-12 h-1.5 bg-border-subtle rounded-full mx-auto mt-3 mb-2 shrink-0"></div>
@@ -1043,10 +1043,10 @@ export default function App() {
                   {/* Bad Example */}
                   <div className="flex flex-col gap-3">
                     <div className="text-sm font-bold text-error flex items-center gap-1"><XCircle className="w-4 h-4"/> 反面教材 (Zero-Padding Trap)</div>
-                    <div className="p-6 bg-bg-base rounded-xl border border-error/30 flex items-center justify-center">
+                    <div className="p-6 bg-bg-canvas rounded-xl border border-error/30 flex items-center justify-center">
                       {/* 模拟截图中的错误做法：0 padding, 圆角割裂 */}
                       <div className="w-full max-w-sm h-12 bg-bg-elevated-2 rounded-xl flex">
-                        <div className="flex-1 bg-gradient-to-b from-primary to-primary-active rounded-l-xl flex items-center justify-center text-white font-bold text-sm gap-2">
+                        <div className="flex-1 bg-[image:var(--color-button-primary)] rounded-l-xl flex items-center justify-center text-white font-bold text-sm gap-2">
                           <Trophy className="w-4 h-4" /> High Roller
                         </div>
                         <div className="flex-1 flex items-center justify-center text-text-50 font-medium text-sm gap-2">
@@ -1065,7 +1065,7 @@ export default function App() {
                   {/* Good Example */}
                   <div className="flex flex-col gap-3">
                     <div className="text-sm font-bold text-success flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> 最佳实践 (Track & Slider)</div>
-                    <div className="p-6 bg-bg-base rounded-xl border border-success/30 flex items-center justify-center">
+                    <div className="p-6 bg-bg-canvas rounded-xl border border-success/30 flex items-center justify-center">
                       {/* 正确做法：4px padding, 同心圆法则 (外12px, 内8px) */}
                       <div className="w-full max-w-sm h-12 bg-bg-elevated-2 rounded-xl p-1 flex relative">
                         {[
@@ -1081,7 +1081,7 @@ export default function App() {
                               onClick={() => setActiveTab10_5(tab.id)}
                               className={`flex-1 flex items-center justify-center text-sm gap-2 relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
                                 isActive
-                                  ? 'bg-gradient-to-b from-primary to-primary-active text-white font-bold shadow-md'
+                                  ? 'bg-[image:var(--color-button-primary)] text-white font-bold shadow-md'
                                   : 'text-text-50 hover:text-text-100 font-medium'
                               }`}
                             >
@@ -1122,7 +1122,7 @@ export default function App() {
                     <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">1. Page Canvas</h4>
                     <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-bold">BASE LAYER</span>
                   </div>
-                  <div className="relative aspect-video bg-bg-base rounded-2xl border border-border-subtle overflow-hidden flex flex-col">
+                  <div className="relative aspect-video bg-bg-canvas rounded-2xl border border-border-subtle overflow-hidden flex flex-col">
                     {/* Annotation Layer */}
                     <div className="absolute inset-0 pointer-events-none border-2 border-dashed border-primary/30 rounded-2xl m-4 flex items-start justify-start p-2">
                       <div className="bg-primary text-white text-[10px] px-1.5 py-0.5 rounded font-bold">spacing/16 (Margin)</div>
@@ -1168,7 +1168,7 @@ export default function App() {
                         <div className="text-sm font-bold text-text-100">Surface / Level 1</div>
                         <div className="text-[10px] text-text-50 font-mono">bg/surface/1 | radius/16 | p/16-24</div>
                       </div>
-                      <div className="w-12 h-12 bg-bg-base rounded-xl border border-border-subtle flex items-center justify-center text-xs font-bold text-text-25">L1</div>
+                      <div className="w-12 h-12 bg-bg-canvas rounded-xl border border-border-subtle flex items-center justify-center text-xs font-bold text-text-25">L1</div>
                     </div>
 
                     {/* Level 2 */}
@@ -1221,7 +1221,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <button className="w-full py-4 rounded-xl text-white font-bold text-lg tracking-wide shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008]">
+                <button className="w-full py-4 rounded-xl text-white font-bold text-[16px] leading-[24px] tracking-wide shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008]">
                   PLACE BET
                 </button>
               </div>
@@ -1233,7 +1233,7 @@ export default function App() {
               
               <div className="space-y-4 flex-1">
                 {/* Success Alert */}
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-success-light border border-success/20">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-success-soft border border-success/20">
                   <CheckCircle2 className="text-success mt-0.5" size={20} />
                   <div>
                     <h4 className="text-sm font-bold text-success">Bet Placed Successfully</h4>
@@ -1242,7 +1242,7 @@ export default function App() {
                 </div>
 
                 {/* Warning Alert */}
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-warning-light border border-warning/20">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-warning-soft border border-warning/20">
                   <AlertTriangle className="text-warning mt-0.5" size={20} />
                   <div>
                     <h4 className="text-sm font-bold text-warning">Odds Have Changed</h4>
@@ -1251,7 +1251,7 @@ export default function App() {
                 </div>
 
                 {/* Error Alert */}
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-error-light border border-error/20">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-error-soft border border-error/20">
                   <XCircle className="text-error mt-0.5" size={20} />
                   <div>
                     <h4 className="text-sm font-bold text-error">Insufficient Balance</h4>
@@ -1269,7 +1269,7 @@ export default function App() {
               
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 {/* Modal Demo */}
-                <div className="lg:col-span-3 relative h-[500px] bg-bg-base rounded-xl  overflow-hidden flex items-center justify-center">
+                <div className="lg:col-span-3 relative h-[500px] bg-bg-canvas rounded-xl  overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
                   
                   {/* Modal Container */}
@@ -1283,14 +1283,14 @@ export default function App() {
                     {/* Scrollable Content */}
                     <div className="p-5 overflow-y-auto space-y-6">
                       {/* Segmented Control */}
-                      <div className="w-full h-12 bg-bg-base rounded-xl p-1 flex relative ">
+                      <div className="w-full h-12 bg-bg-canvas rounded-xl p-1 flex relative ">
                         {['Crypto', 'Fiat'].map(tab => (
                           <div
                             key={tab}
                             onClick={() => setActiveTab11(tab)}
                             className={`flex-1 flex items-center justify-center text-sm relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
                               activeTab11 === tab
-                                ? 'bg-gradient-to-b from-primary to-primary-active text-white font-bold shadow-md'
+                                ? 'bg-[image:var(--color-button-primary)] text-white font-bold shadow-md'
                                 : 'text-text-50 hover:text-text-100 font-medium'
                             }`}
                           >
@@ -1304,7 +1304,7 @@ export default function App() {
                         <label className="text-xs font-bold text-text-50 uppercase tracking-wider">Amount</label>
                         <div className="relative">
                           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-text-50 font-bold">$</span>
-                          <input type="text" defaultValue="500.00" className="w-full h-12 bg-bg-base  rounded-xl pl-8 pr-4 text-text-100 font-mono font-bold focus:border-primary focus:outline-none transition-colors" />
+                          <input type="text" defaultValue="500.00" className="w-full h-12 bg-bg-canvas  rounded-xl pl-8 pr-4 text-text-100 font-mono font-bold focus:border-primary focus:outline-none transition-colors" />
                         </div>
                       </div>
 
@@ -1329,7 +1329,7 @@ export default function App() {
                     {/* Footer Actions */}
                     <div className="p-5 border-t border-border-subtle shrink-0 flex gap-3">
                       <button className="flex-1 h-12 bg-transparent hover:bg-white/5 active:bg-white/10 border border-border-strong text-text-100 font-bold rounded-xl text-sm transition-all duration-75">Cancel</button>
-                      <button className="flex-[2] h-12 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">Confirm Deposit</button>
+                      <button className="flex-[2] h-12 bg-[image:var(--color-button-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">Confirm Deposit</button>
                     </div>
                   </div>
                 </div>
@@ -1356,8 +1356,8 @@ export default function App() {
                     <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><Layers size={16}/> 分割线规范 (Dividers)</h4>
                     <p className="text-xs text-text-50 leading-relaxed">
                       深色模式下的分割线容易与背景融为一体。我们定义了两种级别的分割线：<br/>
-                      1. <strong className="text-text-100">弱分割线 (border-subtle):</strong> <code className="bg-bg-base px-1 rounded text-primary">rgba(255,255,255,0.08)</code>。用于容器边框、列表项分隔、弹窗的 Header/Footer 分隔。<br/>
-                      2. <strong className="text-text-100">强分割线 (border-strong):</strong> <code className="bg-bg-base px-1 rounded text-primary">rgba(255,255,255,0.16)</code>。用于需要更高对比度的场景，如幽灵按钮的边框，确保其在任何背景下都清晰可见。
+                      1. <strong className="text-text-100">弱分割线 (border-subtle):</strong> <code className="bg-bg-canvas px-1 rounded text-primary">#FFFFFF26</code>。用于容器边框、列表项分隔、弹窗的 Header/Footer 分隔。<br/>
+                      2. <strong className="text-text-100">强分割线 (border-strong):</strong> <code className="bg-bg-canvas px-1 rounded text-primary">#FFFFFF4D</code>。用于需要更高对比度的场景，如幽灵按钮的边框，确保其在任何背景下都清晰可见。
                     </p>
                   </div>
                 </div>
@@ -1375,7 +1375,7 @@ export default function App() {
           </SectionTitle>
           
           <div className="bg-bg-elevated-1 p-6 md:p-8 rounded-2xl  shadow-xl space-y-8">
-            <div className="flex items-start gap-4 p-6 bg-error-light/10 border border-error/30 rounded-xl">
+            <div className="flex items-start gap-4 p-6 bg-error-soft/10 border border-error/30 rounded-xl">
               <AlertTriangle className="w-8 h-8 text-error shrink-0 mt-1" />
               <div>
                 <h3 className="text-lg font-bold text-error mb-2">专业忠告：拒绝“弗兰肯斯坦式”的东拼西凑</h3>

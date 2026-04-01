@@ -1,0 +1,408 @@
+8:    <h2 className="text-2xl font-bold text-text-100 tracking-wide">{children}</h2>
+9:    {description && <p className="mt-2 text-text-50 font-medium">{description}</p>}
+13:const ColorSwatch = ({ name, hex, className, textColor = "text-text-100" }: { name: string, hex: string, className: string, textColor?: string }) => (
+16:      <span className={`font-mono text-xs font-semibold tracking-wider ${textColor}`}>{hex}</span>
+19:      <div className="text-sm font-semibold text-text-100">{name}</div>
+29:    <span className="text-sm font-bold text-text-50">{level}</span>
+30:    <span className="font-mono text-xs text-text-50 mt-4">{hex}</span>
+38:      <span className={`text-lg font-semibold ${className}`}>{label}</span>
+40:    <span className="font-mono text-sm text-text-50">{opacity}</span>
+51:        <h4 className="text-lg font-bold text-text-100">{size}</h4>
+52:        <span className="font-mono text-sm text-primary">{px}</span>
+54:      <p className="text-sm text-text-50">{desc}</p>
+55:      <code className="text-xs text-text-50 bg-bg-base px-2 py-1 rounded mt-2 inline-block ">{twClass}</code>
+62:    <div className="font-black text-sm md:text-base text-primary">{name}</div>
+63:    <div className="font-mono text-sm text-text-100 font-bold">{size}</div>
+64:    <div className="font-mono text-xs md:text-sm text-text-50">{px}</div>
+65:    <div className="font-mono text-xs md:text-sm text-text-50">{rem}</div>
+86:          <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs font-bold tracking-widest uppercase mb-4">
+89:          <h1 className="text-4xl md:text-5xl font-extrabold text-text-100 tracking-tight uppercase">
+90:            设计系统规范 <br/><span className="text-primary">RN DESIGN</span>
+92:          <p className="text-lg text-text-50 max-w-2xl font-medium leading-relaxed">
+108:                <h3 className="text-lg font-bold text-primary flex items-center gap-2">
+111:                <p className="text-sm text-text-50 leading-relaxed max-w-xl">
+116:                <div className="text-xs text-text-50 uppercase tracking-widest mb-1">Calculation Formula</div>
+117:                <div className="text-2xl font-black text-primary tracking-tighter">
+120:                <div className="text-[10px] text-text-25 mt-2">X = Font Size (px) | Y = Line Height (px)</div>
+139:                  <div className="text-[10px] text-text-25 uppercase font-bold mb-1">{item.x}px</div>
+140:                  <div className="text-lg font-black text-text-100">{item.y}px</div>
+141:                  <div className="text-[9px] text-primary/60 mt-1 font-mono">LH: {item.y}</div>
+148:              <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4 border-b border-border-subtle pb-2 flex items-center gap-2">
+153:                  <div className="text-2xl font-black text-text-100">文字-标题-特大 ABCd <span className="text-primary">24px 900</span></div>
+154:                  <span className="font-mono text-xs text-text-50">text-2xl font-black</span>
+157:                  <div className="text-lg font-semibold text-text-100">文字-标题-大 ABCd <span className="text-primary">18px 600</span></div>
+158:                  <span className="font-mono text-xs text-text-50">text-lg font-semibold</span>
+161:                  <div className="text-base font-semibold text-text-100">文字-标题-中 ABCd <span className="text-primary">16px 600</span></div>
+162:                  <span className="font-mono text-xs text-text-50">text-base font-semibold</span>
+165:                  <div className="text-tiny font-semibold text-text-100">文字-标题-最小 ABCd <span className="text-primary">11px 600</span></div>
+166:                  <span className="font-mono text-xs text-text-50">text-tiny font-semibold</span>
+173:              <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4 border-b border-border-subtle pb-2 flex items-center gap-2">
+178:                  <div className="text-lg font-normal text-text-100">文字-大正文/登录标题 ABCd <span className="text-primary">18px 400</span></div>
+179:                  <span className="font-mono text-xs text-text-50">text-lg font-normal</span>
+182:                  <div className="text-base font-normal text-text-100">文字-正文-一级 ABCd <span className="text-primary">16px 400</span></div>
+183:                  <span className="font-mono text-xs text-text-50">text-base font-normal</span>
+186:                  <div className="text-sm font-normal text-text-100">文字-正文-二级 ABCd <span className="text-primary">14px 400</span></div>
+187:                  <span className="font-mono text-xs text-text-50">text-sm font-normal</span>
+190:                  <div className="text-xs font-normal text-text-100">文字-正文-辅助 ABCd <span className="text-primary">12px 400</span></div>
+191:                  <span className="font-mono text-xs text-text-50">text-xs font-normal</span>
+194:                  <div className="text-tiny font-normal text-text-100">文字-正文-最小 ABCd <span className="text-primary">11px 400</span></div>
+195:                  <span className="font-mono text-xs text-text-50">text-tiny font-normal</span>
+211:              <h3 className="text-2xl font-bold text-primary mb-2">Brand Text</h3>
+212:              <div className="font-mono text-sm text-text-50 mb-4">#FF6C44</div>
+213:              <p className="text-sm text-text-50 font-medium">用于赔率、余额、链接等需要强调的业务数据。</p>
+218:            <TextOpacityRow label="一 文字 & 图标 (Primary Text)" opacity="#FFFFFF 100%" className="text-text-100" />
+219:            <TextOpacityRow label="二 文字 & 图标 (Secondary Text)" opacity="#FFFFFF 50%" className="text-text-50" />
+220:            <TextOpacityRow label="三 文字 & 图标 (Disabled/Decorative)" opacity="#FFFFFF 25%" className="text-text-25" />
+233:              <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-6">基础结构 (Structural)</h3>
+243:              <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-6 flex items-center gap-2">
+263:              <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4">品牌色 (Brand)</h3>
+267:                <ColorSwatch name="暗色背景 (Dark Bg)" hex="#3D1A10" className="bg-primary-light" textColor="text-primary" />
+270:                    <span className="font-mono text-xs font-semibold text-white">Gradient</span>
+272:                  <div className="text-sm font-semibold text-text-100">主按钮渐变 (CTA)</div>
+279:                <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4">成功 (Success)</h3>
+283:                  <ColorSwatch name="Dark Bg" hex="#1A3010" className="bg-success-light" textColor="text-success" />
+287:                <h3 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4">错误 (Error)</h3>
+291:                  <ColorSwatch name="Dark Bg" hex="#3D100C" className="bg-error-light" textColor="text-error" />
+320:                <h3 className="text-lg font-bold text-text-100 mb-4 flex items-center gap-2">
+321:                  <Square size={18} className="text-primary" /> 同心圆法则演示
+323:                <p className="text-sm text-text-50 mb-6 leading-relaxed">
+325:                  <code className="text-primary font-mono bg-primary/10 px-2 py-1 rounded mt-2 inline-block">内圆角 = 外圆角 - 间距 (Padding)</code>
+330:                  <div className="text-xs text-text-50 mb-2 font-mono">外层 24px (3xl) - 间距 16px (p-4) = 内层 8px (lg)</div>
+333:                      <span className="text-primary font-bold text-sm">完美嵌套 (Perfect Nesting)</span>
+340:                  <div className="text-xs text-text-50 mb-2 font-mono">外层 16px (2xl) - 间距 8px (p-2) = 内层 8px (lg)</div>
+343:                      <span className="text-success font-bold text-sm">紧凑嵌套 (Compact)</span>
+361:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">Name</div>
+362:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">Class</div>
+363:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">Pixels</div>
+364:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">Rem</div>
+365:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">Visual</div>
+381:                <h3 className="text-sm font-bold text-text-100 uppercase tracking-wide mb-4">应用示例：卡片内部间距 (Card Padding)</h3>
+383:                  <div className="absolute top-0 left-0 w-full h-6 bg-primary/10 border-b border-primary/30 flex items-center justify-center text-[10px] text-primary font-mono">p-6 (24px)</div>
+384:                  <div className="absolute top-0 left-0 w-6 h-full bg-primary/10 border-r border-primary/30 flex items-center justify-center text-[10px] text-primary font-mono" style={{ writingMode: 'vertical-rl' }}>p-6 (24px)</div>
+389:                      <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-[10px] text-primary font-mono bg-bg-base px-1 rounded translate-x-1/2 -translate-y-full">gap-4 (16px)</div>
+393:                      <div className="absolute left-0 top-4 w-full h-2 bg-primary/10 border-y border-primary/30 flex items-center justify-center text-[10px] text-primary font-mono">space-y-2 (8px)</div>
+401:                <h3 className="text-sm font-bold text-text-100 uppercase tracking-wide mb-4">应用示例：列表项间距 (List Item Gap)</h3>
+403:                  <div className="h-10 bg-bg-elevated-3 rounded-lg flex items-center px-3 text-sm text-text-50">List Item 1</div>
+404:                  <div className="absolute left-1/2 top-14 -translate-x-1/2 w-10 h-3 bg-primary/10 border-y border-primary/30 flex items-center justify-center text-[10px] text-primary font-mono z-10">gap-3 (12px)</div>
+405:                  <div className="h-10 bg-bg-elevated-3 rounded-lg flex items-center px-3 text-sm text-text-50">List Item 2</div>
+406:                  <div className="absolute left-1/2 top-[108px] -translate-x-1/2 w-10 h-3 bg-primary/10 border-y border-primary/30 flex items-center justify-center text-[10px] text-primary font-mono z-10">gap-3 (12px)</div>
+407:                  <div className="h-10 bg-bg-elevated-3 rounded-lg flex items-center px-3 text-sm text-text-50">List Item 3</div>
+424:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">设备 (Device)</div>
+425:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">断点 (Breakpoint)</div>
+426:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">列数 (Columns)</div>
+427:                <div className="text-xs font-bold text-text-50 uppercase tracking-wider">边距/间距 (Margin/Gutter)</div>
+430:                <div className="font-bold text-text-100">Mobile <span className="text-text-50 font-normal text-sm ml-2 hidden md:inline">(默认)</span></div>
+431:                <div className="font-mono text-sm text-primary">&lt; 768px</div>
+432:                <div className="text-sm text-text-100 font-medium">4 列</div>
+433:                <div className="text-sm text-text-50">M: 16px / G: 12px</div>
+436:                <div className="font-bold text-text-100">Tablet <span className="text-text-50 font-normal text-sm ml-2 hidden md:inline">(md)</span></div>
+437:                <div className="font-mono text-sm text-primary">≥ 768px</div>
+438:                <div className="text-sm text-text-100 font-medium">8 列</div>
+439:                <div className="text-sm text-text-50">M: 24px / G: 16px</div>
+442:                <div className="font-bold text-text-100">Desktop <span className="text-text-50 font-normal text-sm ml-2 hidden md:inline">(lg)</span></div>
+443:                <div className="font-mono text-sm text-primary">≥ 1024px</div>
+444:                <div className="text-sm text-text-100 font-medium">12 列</div>
+445:                <div className="text-sm text-text-50">M: Auto / G: 24px</div>
+451:              <h3 className="text-xl font-bold text-text-100 mb-2">游戏卡片等比例缩放 (Aspect Ratio)</h3>
+452:              <p className="text-sm text-text-50 mb-8 leading-relaxed max-w-3xl">
+453:                针对游戏封面的特殊尺寸需求，我们使用 <code className="text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">aspect-[100/134]</code> 锁定比例。
+460:                  <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4 border-b border-border-subtle pb-2">固定尺寸基准 (Fixed Size Reference)</h4>
+466:                        <div className="absolute inset-0 flex items-center justify-center text-text-100 font-bold text-sm">封面</div>
+468:                      <div className="text-xs font-mono text-text-50 bg-bg-base px-2 py-1 rounded  text-center">100 x 134</div>
+475:                        <div className="absolute inset-0 flex items-center justify-center text-text-100 font-bold text-base">封面</div>
+477:                      <div className="text-xs font-mono text-text-50 bg-bg-base px-2 py-1 rounded  text-center">118 x 158</div>
+484:                  <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest mb-4 border-b border-border-subtle pb-2">流式响应式栅格 (Fluid Grid)</h4>
+485:                  <p className="text-xs text-text-50 mb-4">缩放浏览器窗口，观察卡片如何在不同断点下自适应宽度，同时保持高度比例完美一致。</p>
+491:                          <div className="text-tiny md:text-xs font-bold text-white truncate">Game Title {i}</div>
+511:              <h3 className="text-xl font-bold text-text-100 mb-2">8.1 绝对尺寸档位 (Size Tiers)</h3>
+512:              <p className="text-sm text-text-50 mb-6 leading-relaxed">
+517:                <table className="w-full text-left border-collapse min-w-[600px]">
+519:                    <tr className="border-b border-border-subtle text-xs text-text-50 uppercase tracking-wider">
+525:                      <th className="pb-3 font-bold text-right">示例 (Demo)</th>
+530:                      <td className="py-4 font-black text-primary">Large (L)</td>
+531:                      <td className="py-4 font-mono text-sm text-text-100">48px (h-12)</td>
+532:                      <td className="py-4 font-mono text-sm text-text-100">16px Bold / 24px</td>
+533:                      <td className="py-4 font-mono text-sm text-text-100">24px (px-6)</td>
+534:                      <td className="py-4 text-sm text-text-50">全局主行动点 (Main CTA)、登录注册、底部悬浮操作区。</td>
+535:                      <td className="py-4 text-right">
+536:                        <button className="h-12 px-6 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-[16px] leading-[24px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button L</button>
+540:                      <td className="py-4 font-black text-primary">Medium (M)</td>
+541:                      <td className="py-4 font-mono text-sm text-text-100">40px (h-10)</td>
+542:                      <td className="py-4 font-mono text-sm text-text-100">14px Bold / 20px</td>
+543:                      <td className="py-4 font-mono text-sm text-text-100">16px (px-4)</td>
+544:                      <td className="py-4 text-sm text-text-50">标准按钮。用于大多数表单提交、弹窗确认/取消、卡片主操作。</td>
+545:                      <td className="py-4 text-right">
+546:                        <button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-[14px] leading-[20px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button M</button>
+550:                      <td className="py-4 font-black text-primary">Small (S)</td>
+551:                      <td className="py-4 font-mono text-sm text-text-100">32px (h-8)</td>
+552:                      <td className="py-4 font-mono text-sm text-text-100">12px Bold / 16px</td>
+553:                      <td className="py-4 font-mono text-sm text-text-100">12px (px-3)</td>
+554:                      <td className="py-4 text-sm text-text-50">局部操作。如列表项跟随按钮、表格内操作、次级筛选器。</td>
+555:                      <td className="py-4 text-right">
+556:                        <button className="h-8 px-3 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-md text-[12px] leading-[16px] shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Button S</button>
+560:                      <td className="py-4 font-black text-primary">X-Small (XS)</td>
+561:                      <td className="py-4 font-mono text-sm text-text-100">24px (h-6)</td>
+562:                      <td className="py-4 font-mono text-sm text-text-100">11px Bold / 14px</td>
+563:                      <td className="py-4 font-mono text-sm text-text-100">8px (px-2)</td>
+564:                      <td className="py-4 text-sm text-text-50">极致紧凑场景。如 Tag 标签式按钮、极小卡片内的附加操作。</td>
+565:                      <td className="py-4 text-right">
+566:                        <button className="h-6 px-2 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded text-[11px] leading-[14px] shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">Btn XS</button>
+576:              <h3 className="text-xl font-bold text-text-100 mb-2">8.2 变体与状态矩阵 (Variants & States Matrix)</h3>
+577:              <p className="text-sm text-text-50 mb-6 leading-relaxed">
+579:                <br/><span className="text-warning">注意：同组按钮（如弹窗底部的确认和取消）必须保持相同的圆角规则，禁止混用 Pill 和 Rounded。</span>
+583:                <div className="grid grid-cols-6 gap-4 mb-4 text-xs font-bold text-text-50 uppercase tracking-wider border-b border-border-subtle pb-2">
+585:                  <div className="text-center">Default</div>
+586:                  <div className="text-center">Hover</div>
+587:                  <div className="text-center">Active (Pressed)</div>
+588:                  <div className="text-center">Disabled</div>
+589:                  <div className="text-center text-primary">交互预览 (Preview)</div>
+595:                    <div className="font-bold text-text-100">Primary CTA</div>
+596:                    <div className="text-xs text-text-50">渐变强调，全局唯一</div>
+598:                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)]">Primary</button></div>
+599:                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#FF8566] to-[#F0552D] text-white font-bold rounded-lg text-sm shadow-[0_0_20px_rgba(255,108,68,0.5)]">Hover</button></div>
+600:                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#E65A33] to-[#D13008] text-white font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75 shadow-[0_0_10px_rgba(255,108,68,0.4)]">Active</button></div>
+601:                  <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active text-white font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+602:                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)] hover:shadow-[0_0_20px_rgba(255,108,68,0.5)] active:shadow-[0_0_10px_rgba(255,108,68,0.4)] active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+608:                    <div className="font-bold text-text-100">Secondary</div>
+609:                    <div className="text-xs text-text-50">次级操作，深灰填充</div>
+611:                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-elevated-2  text-text-100 font-bold rounded-lg text-sm">Secondary</button></div>
+612:                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-elevated-3  text-text-100 font-bold rounded-lg text-sm">Hover</button></div>
+613:                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-elevated-2 brightness-90  text-text-100 font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75">Active</button></div>
+614:                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-elevated-2  text-text-50 font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+615:                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90  text-text-100 font-bold rounded-lg text-sm active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+621:                    <div className="font-bold text-text-100">Ghost / Outline</div>
+622:                    <div className="text-xs text-text-50">幽灵按钮，透明底色</div>
+624:                  <div className="flex justify-center"><button className="h-10 px-4 bg-transparent border border-border-strong text-text-100 font-bold rounded-lg text-sm">Ghost</button></div>
+625:                  <div className="flex justify-center"><button className="h-10 px-4 bg-white/5 border border-border-strong text-text-100 font-bold rounded-lg text-sm">Hover</button></div>
+626:                  <div className="flex justify-center"><button className="h-10 px-4 bg-white/10 border border-border-strong text-text-100 font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75">Active</button></div>
+627:                  <div className="flex justify-center"><button className="h-10 px-4 bg-transparent border border-border-strong text-text-50 font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+628:                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-transparent hover:bg-white/5 active:bg-white/10 border border-border-strong text-text-100 font-bold rounded-lg text-sm active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+635:              <h3 className="text-xl font-bold text-text-100 mb-2">8.3 按钮圆角的环境绑定 (Contextual Radius)</h3>
+636:              <p className="text-sm text-text-50 mb-8 leading-relaxed max-w-3xl">
+637:                按钮的圆角<strong className="text-error">绝对不允许</strong>脱离环境单独设定。必须严格遵循“同心圆法则”：<br/>
+638:                <code className="text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">按钮圆角 = 容器圆角 - 容器内边距 (Padding)</code>
+644:                  <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">场景 A: 嵌套在卡片中</h4>
+646:                    <div className="h-24 bg-bg-elevated-3 rounded-xl mb-4 flex items-center justify-center text-text-50 text-sm">Content Area</div>
+648:                      <button className="flex-1 h-10 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 text-text-100 font-bold rounded-xl text-sm active:scale-[0.97] transition-all duration-75">取消</button>
+649:                      <button className="flex-1 h-10 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">确认提交</button>
+652:                  <div className="text-xs text-text-50 bg-bg-base p-3 rounded-lg ">
+653:                    <span className="text-success font-bold">正确示范：</span><br/>
+655:                    按钮圆角应为 16 - 16 = 0？不，当计算结果 ≤0 时，取最小值 4px 或 8px。这里为了视觉饱满，容器内部统一使用了 <code className="text-primary">12px (xl)</code>，按钮也必须跟随使用 <code className="text-primary">12px (xl)</code>。
+661:                  <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">场景 B: 胶囊型容器 (如搜索/筛选)</h4>
+663:                    <div className="flex-1 px-4 text-text-50 text-sm">输入搜索内容...</div>
+664:                    <button className="h-10 px-6 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-full text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] transition-all duration-75">搜索</button>
+666:                  <div className="text-xs text-text-50 bg-bg-base p-3 rounded-lg  mt-4">
+667:                    <span className="text-success font-bold">正确示范：</span><br/>
+685:            <div className="bg-bg-elevated-1 p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4">
+687:                <Layers className="w-5 h-5 text-text-50" />
+689:              <h4 className="text-base font-bold text-text-100">Standard Elevation</h4>
+690:              <p className="text-xs text-text-50 leading-relaxed">
+692:                <span className="text-primary/80 mt-1 inline-block">纯黑大半径阴影 + 微弱边框</span>
+697:            <div className="bg-bg-elevated-1 p-8 rounded-2xl border border-primary shadow-[0_0_24px_rgba(255,108,68,0.15)] flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden">
+700:                <CheckCircle2 className="w-5 h-5 text-primary" />
+702:              <h4 className="text-base font-bold text-primary relative z-10">Active / Glow State</h4>
+703:              <p className="text-xs text-text-50 leading-relaxed relative z-10">
+705:                <span className="text-primary/80 mt-1 inline-block">品牌色弥散发光 + 内部微光背景</span>
+710:            <div className="bg-bg-elevated-1 p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:border-text-50 hover:shadow-[0_16px_40px_rgba(0,0,0,0.9)] cursor-pointer group">
+712:                <MousePointer2 className="w-5 h-5 text-text-50 group-hover:text-text-100 transition-colors" />
+714:              <h4 className="text-base font-bold text-text-100 group-hover:text-white transition-colors">Hover Feedback</h4>
+715:              <p className="text-xs text-text-50 leading-relaxed">
+717:                <span className="text-primary/80 mt-1 inline-block">(请将鼠标悬浮在此卡片上体验)</span>
+735:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+736:                  <Menu className="w-5 h-5 text-primary" /> 顶部导航栏 (Top App Bar)
+743:                      <div className="w-8 h-8 rounded bg-gradient-to-br from-primary to-primary-active flex items-center justify-center text-white font-black text-xs">RN</div>
+744:                      <span className="font-bold text-text-100">首页</span>
+747:                      <Search className="w-5 h-5 text-text-50" />
+749:                        <Bell className="w-5 h-5 text-text-50" />
+763:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+764:                  <p className="text-xs text-text-50 leading-relaxed">
+765:                    <strong className="text-text-100">毛玻璃效果 (Backdrop Blur)</strong>：深色模式下，纯色导航栏会显得极其沉闷。使用半透明背景加高斯模糊，能在长列表滚动时透出底层内容的色彩轮廓，保持空间层次感（Z-axis），这是 Apple HIG 强烈推荐的做法。<br/>
+766:                    <strong className="text-text-100">高度规范</strong>：移动端通常固定在 44px-56px，确保触控热区达标。
+773:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+774:                  <Home className="w-5 h-5 text-primary" /> 底部标签栏 (Bottom Tab Bar)
+781:                      <Home className="w-6 h-6 text-primary" />
+782:                      <span className="text-[10px] font-bold text-primary">大厅</span>
+785:                      <Gamepad2 className="w-6 h-6 text-text-50" />
+786:                      <span className="text-[10px] font-medium text-text-50">游戏</span>
+789:                      <User className="w-6 h-6 text-text-50" />
+790:                      <span className="text-[10px] font-medium text-text-50">我的</span>
+797:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+798:                  <p className="text-xs text-text-50 leading-relaxed">
+799:                    <strong className="text-text-100">拇指热区 (Thumb Zone)</strong>：根据人体工学，屏幕底部是单手握持时最容易触达的区域。核心导航必须放在这里。<br/>
+800:                    <strong className="text-text-100">状态对比</strong>：选中态必须有极强的视觉对比（品牌色 + 粗体），未选中态需压暗（50% 透明度），降低视觉噪音。
+810:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+811:                  <Search className="w-5 h-5 text-primary" /> 搜索框 (Search Input)
+817:                    <Search className="w-4 h-4 text-text-50 mr-2" />
+818:                    <input type="text" placeholder="搜索游戏、赛事..." className="flex-1 bg-transparent border-none outline-none text-sm text-text-100 placeholder:text-text-50" />
+819:                    <XCircle className="w-4 h-4 text-text-25 hover:text-text-50 cursor-pointer transition-colors" />
+825:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+826:                  <p className="text-xs text-text-50 leading-relaxed">
+827:                    <strong className="text-text-100">视觉启示 (Affordance)</strong>：搜索框几乎清一色使用<strong className="text-primary">胶囊圆角 (Pill)</strong>。这能在潜意识里将其与普通的表单输入框（通常是 8px/12px 圆角）区分开来，暗示这是一个全局探索入口。<br/>
+828:                    <strong className="text-text-100">即时反馈</strong>：右侧必须提供一键清除 (Clear) 按钮，提升移动端输入效率。
+835:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+836:                  <ChevronDown className="w-5 h-5 text-primary" /> 下拉筛选 (Dropdown)
+842:                  <button className="h-10 px-4 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 rounded-lg flex items-center gap-2 text-sm font-medium text-text-100 active:scale-[0.97] transition-all duration-75">
+843:                    全部游戏类型 <ChevronDown className="w-4 h-4 text-text-50" />
+849:                      <div className="px-3 py-2 text-sm text-primary font-bold bg-primary/10 rounded-lg cursor-pointer flex justify-between items-center">
+852:                      <div className="px-3 py-2 text-sm text-text-100 hover:bg-bg-elevated-3 rounded-lg cursor-pointer transition-colors">体育赛事</div>
+853:                      <div className="px-3 py-2 text-sm text-text-100 hover:bg-bg-elevated-3 rounded-lg cursor-pointer transition-colors">真人娱乐</div>
+860:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+861:                  <p className="text-xs text-text-50 leading-relaxed">
+862:                    <strong className="text-text-100">上下文保留 (Context Retention)</strong>：使用浮层而不是页面跳转，能大幅减少用户的认知负荷。<br/>
+863:                    <strong className="text-text-100">Z轴海拔</strong>：下拉菜单必须带有极强的阴影 (Standard Elevation)，确保它在视觉上完全凌驾于页面其他元素之上。选中项需用品牌色高亮。
+873:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+874:                  <AlertTriangle className="w-5 h-5 text-primary" /> 中心弹窗 (Center Modal)
+881:                    <div className="text-center space-y-2">
+882:                      <h4 className="text-base font-bold text-text-100">确认退出登录？</h4>
+883:                      <p className="text-xs text-text-50">退出后将无法接收最新的赛事通知和中奖信息。</p>
+886:                      <button className="flex-1 h-10 bg-bg-elevated-2 hover:bg-bg-elevated-3 active:bg-bg-elevated-2 active:brightness-90 text-text-100 font-bold rounded-xl text-[14px] leading-[20px] active:scale-[0.97] transition-all duration-75">取消</button>
+887:                      <button className="flex-1 h-10 bg-error text-white font-bold rounded-xl text-[14px] leading-[20px] hover:bg-error/90 active:scale-[0.97] transition-all duration-75 shadow-lg shadow-error/20">确认退出</button>
+894:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+895:                  <p className="text-xs text-text-50 leading-relaxed">
+896:                    <strong className="text-text-100">强阻断 (Blocking)</strong>：中心弹窗用于极其重要的二次确认。必须配备 <code className="text-primary">bg-black/60</code> 的全屏遮罩，强制聚焦用户视线。<br/>
+897:                    <strong className="text-text-100">同心圆法则</strong>：注意弹窗容器是 24px (2xl) 圆角，内部按钮严格使用了 12px (xl) 圆角，保持视觉平行。
+904:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+905:                  <Layers className="w-5 h-5 text-primary" /> 底部抽屉 (Bottom Sheet)
+916:                      <h4 className="text-lg font-bold text-text-100">快捷充值</h4>
+917:                      <X className="w-5 h-5 text-text-50 cursor-pointer" />
+925:                          className={`h-12 rounded-xl border font-bold flex items-center justify-center text-sm transition-all active:scale-[0.98] ${
+927:                              ? 'bg-primary/10 border-primary text-primary'
+928:                              : 'bg-bg-elevated-1 border-border-subtle text-text-100 hover:bg-bg-elevated-2'
+935:                    <button className="w-full h-12 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-base mt-2 shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">立即充值</button>
+941:                  <h4 className="text-sm font-bold text-text-100 mb-1">设计依据 (Rationale)</h4>
+942:                  <p className="text-xs text-text-50 leading-relaxed">
+943:                    <strong className="text-text-100">单手操作友好 (One-Handed Use)</strong>：现代 App 替代复杂中心弹窗的首选方案。从底部滑出，完美契合大屏手机的单手操作。<br/>
+944:                    <strong className="text-text-100">拖拽指示器 (Drag Handle)</strong>：顶部必须有一个 1.5px 高的胶囊条，暗示用户可以向下拖拽关闭，符合物理直觉。
+953:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+954:                  <Ruler className="w-5 h-5 text-primary" /> 弹窗与浮层尺寸规范 (Overlay Sizing Guidelines)
+960:                    <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
+961:                      <Square className="w-4 h-4 text-primary" /> 中心弹窗 (Center Modal)
+967:                          <h5 className="font-bold text-text-100 text-sm text-center">固定宽度，动态高度</h5>
+969:                        <div className="p-4 overflow-y-auto text-xs text-text-50 space-y-2">
+970:                          <p>宽度：移动端通常为 <code className="text-primary">w-[calc(100vw-32px)]</code> 或最大 <code className="text-primary">320px-400px</code>。避免过宽导致视线移动过长。</p>
+971:                          <p>高度：随内容自适应，但必须设置最大高度（如 <code className="text-primary">max-h-[80vh]</code>）。</p>
+972:                          <p>滚动：内容过多时，头部和底部操作区固定，中间内容区滚动 (<code className="text-primary">overflow-y-auto</code>)。</p>
+975:                          <button className="w-full h-8 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white rounded-lg text-xs font-bold shadow-md shadow-primary/20 active:scale-[0.97] transition-all duration-75">确定</button>
+983:                    <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
+984:                      <Info className="w-4 h-4 text-primary" /> 轻提示 (Toast / Notification)
+989:                        <CheckCircle2 className="w-4 h-4 text-success shrink-0 mr-2" />
+990:                        <span className="text-xs text-text-100 font-medium">操作成功（单行文本）</span>
+994:                        <AlertTriangle className="w-4 h-4 text-warning shrink-0 mr-2 mt-0.5" />
+995:                        <span className="text-xs text-text-100 font-medium leading-relaxed">网络连接不稳定，请检查您的网络设置后重试。（多行文本，高度自适应）</span>
+998:                    <div className="text-xs text-text-50 space-y-2 mt-2">
+999:                      <p>宽度：通常限制最大宽度（如 <code className="text-primary">max-w-sm</code>），避免横跨整个屏幕。</p>
+1000:                      <p>高度：<strong className="text-text-100">必须设置最小高度</strong>（如 <code className="text-primary">min-h-[48px]</code> 或 <code className="text-primary">56px</code>）。</p>
+1007:                    <h4 className="text-base font-bold text-text-100 flex items-center gap-2">
+1008:                      <Layers className="w-4 h-4 text-primary" /> 底部抽屉 (Bottom Sheet)
+1015:                          <h5 className="font-bold text-text-100 text-sm">游戏筛选</h5>
+1017:                        <div className="p-6 overflow-y-auto text-xs text-text-50 space-y-4">
+1025:                    <div className="text-xs text-text-50 space-y-2 mt-2">
+1026:                      <p>宽度：移动端 <code className="text-primary">100%</code>，平板/桌面端通常限制最大宽度并居中。</p>
+1027:                      <p>高度：随内容自适应，但<strong className="text-text-100">绝对不能达到 100% 屏幕高度</strong>。</p>
+1028:                      <p>最高点：通常最高限制在 <code className="text-primary">90vh</code> 或距离顶部留出安全区+24px的间距。必须露出背后的半透明遮罩，给用户“我还在当前页面，向下滑动即可关闭”的明确心理暗示。</p>
+1038:                <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+1039:                  <Layers className="w-5 h-5 text-primary" /> 分段控制器 / 标签栏 (Segmented Control)
+1045:                    <div className="text-sm font-bold text-error flex items-center gap-1"><XCircle className="w-4 h-4"/> 反面教材 (Zero-Padding Trap)</div>
+1049:                        <div className="flex-1 bg-gradient-to-b from-primary to-primary-active rounded-l-xl flex items-center justify-center text-white font-bold text-sm gap-2">
+1052:                        <div className="flex-1 flex items-center justify-center text-text-50 font-medium text-sm gap-2">
+1055:                        <div className="flex-1 flex items-center justify-center text-text-50 font-medium text-sm gap-2">
+1060:                    <p className="text-xs text-text-50">
+1061:                      <strong className="text-error">问题所在：</strong>滑块贴死边缘导致空间逼仄；左侧滑块被迫变成“左圆右直”的畸形怪状，破坏了组件的独立性。
+1067:                    <div className="text-sm font-bold text-success flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> 最佳实践 (Track & Slider)</div>
+1082:                              className={`flex-1 flex items-center justify-center text-sm gap-2 relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
+1084:                                  ? 'bg-gradient-to-b from-primary to-primary-active text-white font-bold shadow-md'
+1085:                                  : 'text-text-50 hover:text-text-100 font-medium'
+1094:                    <p className="text-xs text-text-50">
+1095:                      <strong className="text-success">设计依据：</strong>引入 <code className="text-primary">4px (p-1)</code> 的内边距，形成“轨道与滑块”的物理隐喻。严格遵守同心圆法则（外容器 12px - 内边距 4px = 滑块 8px），滑块保持完整的圆角矩形，视觉呼吸感极佳。
+1114:              <h3 className="text-lg font-bold text-text-100 flex items-center gap-2">
+1115:                <Layout className="w-5 h-5 text-primary" /> 页面与容器规范 (Page & Surface Layout)
+1122:                    <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">1. Page Canvas</h4>
+1123:                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-bold">BASE LAYER</span>
+1128:                      <div className="bg-primary text-white text-[10px] px-1.5 py-0.5 rounded font-bold">spacing/16 (Margin)</div>
+1140:                      <div className="grid grid-cols-2 gap-4 text-[10px] font-mono">
+1142:                          <span className="text-text-25">Background</span>
+1143:                          <span className="text-text-100">color/bg/canvas (#141414)</span>
+1146:                          <span className="text-text-25">Main Margin</span>
+1147:                          <span className="text-text-100">spacing/16 (16px)</span>
+1152:                  <p className="text-xs text-text-50 leading-relaxed">
+1153:                    <strong className="text-text-100">用途：</strong>页面基础背景。所有内容均承载于此画布之上。默认文字颜色为 <code className="text-primary">color/text/primary</code>。
+1160:                    <h4 className="text-sm font-bold text-text-50 uppercase tracking-widest">2. Surface Container</h4>
+1161:                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-bold">ELEVATION LAYERS</span>
+1168:                        <div className="text-sm font-bold text-text-100">Surface / Level 1</div>
+1169:                        <div className="text-[10px] text-text-50 font-mono">bg/surface/1 | radius/16 | p/16-24</div>
+1171:                      <div className="w-12 h-12 bg-bg-base rounded-xl border border-border-subtle flex items-center justify-center text-xs font-bold text-text-25">L1</div>
+1177:                        <div className="text-sm font-bold text-text-100">Surface / Level 2</div>
+1178:                        <div className="text-[10px] text-text-50 font-mono">bg/surface/2 | radius/16 | p/16</div>
+1180:                      <div className="w-10 h-10 bg-bg-elevated-1 rounded-xl flex items-center justify-center text-xs font-bold text-text-25">L2</div>
+1186:                        <div className="text-sm font-bold text-text-100">Surface / Level 3</div>
+1187:                        <div className="text-[10px] text-text-50 font-mono">bg/surface/3 | radius/12 | p/12</div>
+1189:                      <div className="w-8 h-8 bg-bg-elevated-2 rounded-lg flex items-center justify-center text-[10px] font-bold text-text-25">L3</div>
+1193:                  <p className="text-xs text-text-50 leading-relaxed">
+1194:                    <strong className="text-text-100">用途：</strong>卡片、浮层、区块容器。通过背景色的明度提升来模拟物理世界中的“海拔”高度。Level 1 通常带有弱边边框。
+1205:                <h3 className="text-lg font-bold text-text-100 uppercase tracking-wide">Bet Slip</h3>
+1206:                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold">LIVE</span>
+1213:                    <span className="text-sm font-bold text-text-100">Manchester Utd vs Arsenal</span>
+1214:                    <span className="text-error text-xs font-bold flex items-center gap-1"><XCircle size={12}/> 89'</span>
+1217:                    <span className="text-text-50 text-sm font-medium">Match Winner</span>
+1218:                    <div className="bg-bg-elevated-3 px-4 py-2 rounded-lg text-primary font-extrabold text-lg">
+1224:                <button className="w-full py-4 rounded-xl text-white font-bold text-[16px] leading-[24px] tracking-wide shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008]">
+1232:              <h3 className="text-lg font-bold text-text-100 uppercase tracking-wide border-b border-border-subtle pb-4 mb-6">System Feedback</h3>
+1237:                  <CheckCircle2 className="text-success mt-0.5" size={20} />
+1239:                    <h4 className="text-sm font-bold text-success">Bet Placed Successfully</h4>
+1240:                    <p className="text-sm text-text-50 mt-1 font-medium">Your ticket ID is #89237492.</p>
+1246:                  <AlertTriangle className="text-warning mt-0.5" size={20} />
+1248:                    <h4 className="text-sm font-bold text-warning">Odds Have Changed</h4>
+1249:                    <p className="text-sm text-text-50 mt-1 font-medium">The odds for your selection have decreased to 2.10.</p>
+1255:                  <XCircle className="text-error mt-0.5" size={20} />
+1257:                    <h4 className="text-sm font-bold text-error">Insufficient Balance</h4>
+1258:                    <p className="text-sm text-text-50 mt-1 font-medium">Please deposit funds to place this bet.</p>
+1267:                <h3 className="text-lg font-bold text-text-100 uppercase tracking-wide">Complex Modal (Overlay Sizing & Segmented Control)</h3>
+1279:                      <h4 className="font-bold text-text-100 text-lg">Deposit Funds</h4>
+1280:                      <button className="text-text-50 hover:text-text-100 transition-colors"><XCircle size={20} /></button>
+1291:                            className={`flex-1 flex items-center justify-center text-sm relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
+1293:                                ? 'bg-gradient-to-b from-primary to-primary-active text-white font-bold shadow-md'
+1294:                                : 'text-text-50 hover:text-text-100 font-medium'
+1304:                        <label className="text-xs font-bold text-text-50 uppercase tracking-wider">Amount</label>
+1306:                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-text-50 font-bold">$</span>
+1307:                          <input type="text" defaultValue="500.00" className="w-full h-12 bg-bg-base  rounded-xl pl-8 pr-4 text-text-100 font-mono font-bold focus:border-primary focus:outline-none transition-colors" />
+1317:                            className={`h-10 rounded-lg font-bold text-sm transition-all active:scale-[0.98] border ${
+1319:                                ? 'bg-primary/10 border-primary text-primary'
+1320:                                : 'bg-bg-elevated-3 hover:bg-bg-elevated-1 border-border-subtle text-text-100'
+1331:                      <button className="flex-1 h-12 bg-transparent hover:bg-white/5 active:bg-white/10 border border-border-strong text-text-100 font-bold rounded-xl text-sm transition-all duration-75">Cancel</button>
+1332:                      <button className="flex-[2] h-12 bg-gradient-to-b from-primary to-primary-active hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-[0_0_20px_rgba(255,108,68,0.4)] hover:shadow-[0_0_30px_rgba(255,108,68,0.6)] active:scale-[0.97] transition-all duration-75">Confirm Deposit</button>
+1340:                    <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><Info size={16}/> 中心弹窗 vs 底部抽屉</h4>
+1341:                    <p className="text-xs text-text-50 leading-relaxed">
+1342:                      <strong className="text-text-100">中心弹窗 (Center Modal):</strong> 用于强阻断、需要用户集中注意力完成的独立任务（如：充值、确认删除、复杂表单）。<br/><br/>
+1343:                      <strong className="text-text-100">底部抽屉 (Bottom Sheet):</strong> 用于轻量级交互、上下文相关的选择或操作（如：分享菜单、筛选器、快速回复），在移动端更易于单手操作。
+1348:                    <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><XCircle size={16}/> 什么时候需要关闭按钮？</h4>
+1349:                    <p className="text-xs text-text-50 leading-relaxed">
+1350:                      1. <strong className="text-text-100">必须有:</strong> 当弹窗内容较长（可能滚动隐藏底部取消按钮），或者是一个纯信息展示/表单填写弹窗时，右上角必须提供关闭按钮。<br/>
+1351:                      2. <strong className="text-text-100">可省略:</strong> 当弹窗是一个简单的对话框（如：确认/取消），且底部操作区始终可见时，右上角的关闭按钮可以省略，依赖底部的“取消”或点击遮罩层关闭。
+1356:                    <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><Layers size={16}/> 分割线规范 (Dividers)</h4>
+1357:                    <p className="text-xs text-text-50 leading-relaxed">
+1359:                      1. <strong className="text-text-100">弱分割线 (border-subtle):</strong> <code className="bg-bg-base px-1 rounded text-primary">rgba(255,255,255,0.08)</code>。用于容器边框、列表项分隔、弹窗的 Header/Footer 分隔。<br/>
+1360:                      2. <strong className="text-text-100">强分割线 (border-strong):</strong> <code className="bg-bg-base px-1 rounded text-primary">rgba(255,255,255,0.16)</code>。用于需要更高对比度的场景，如幽灵按钮的边框，确保其在任何背景下都清晰可见。
+1379:              <AlertTriangle className="w-8 h-8 text-error shrink-0 mt-1" />
+1381:                <h3 className="text-lg font-bold text-error mb-2">专业忠告：拒绝“弗兰肯斯坦式”的东拼西凑</h3>
+1382:                <p className="text-sm text-text-100 leading-relaxed mb-4">
+1383:                  在协同办公中，最可怕的不是缺乏设计，而是<strong className="text-error">无视现有规范，不断“发明”新设计</strong>。
+1386:                <p className="text-sm text-text-100 leading-relaxed">
+1387:                  <strong className="text-warning">请尊重维护人员的劳动成果！</strong> 维护一套严谨的组件库和设计规范是非常辛苦的。每一个 4px 的间距、每一个圆角的嵌套、每一种颜色的透明度，都是经过深思熟虑的。随意打破这些规则，意味着维护者需要花费数倍的时间去填补这些“技术债务”。
+1393:              <h3 className="text-base font-bold text-text-100 mb-4 flex items-center gap-2">
+1394:                <Layers className="w-5 h-5 text-primary" /> 正确的构建思维：从底层容器到零碎组件
+1398:                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mb-3">1</div>
+1399:                  <h4 className="font-bold text-text-100 text-sm mb-2">确定底层容器 (Containers)</h4>
+1400:                  <p className="text-xs text-text-50 leading-relaxed">
+1405:                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mb-3">2</div>
+1406:                  <h4 className="font-bold text-text-100 text-sm mb-2">应用基础组件 (Foundations)</h4>
+1407:                  <p className="text-xs text-text-50 leading-relaxed">
+1412:                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mb-3">3</div>
+1413:                  <h4 className="font-bold text-text-100 text-sm mb-2">填充零碎元素 (Fragments)</h4>
+1414:                  <p className="text-xs text-text-50 leading-relaxed">
+1422:              <h3 className="text-base font-bold text-text-100 mb-2 flex items-center gap-2">
+1423:                <CheckCircle2 className="w-5 h-5 text-success" /> 专业使用指南
+1425:              <ul className="text-sm text-text-50 space-y-3 list-disc list-inside">
+1426:                <li><strong className="text-text-100">先查阅，后设计：</strong> 在开始任何新页面的设计或开发前，先在本文档中寻找可复用的模式。</li>
+1427:                <li><strong className="text-text-100">克制创新：</strong> 如果你觉得现有的组件无法满足需求，请先与规范维护者沟通，探讨是否可以通过组合现有组件来实现，而不是立刻创建一个全新的样式。</li>
+1428:                <li><strong className="text-text-100">拥抱约束：</strong> 规范的存在就是为了限制自由。在 8px 和 10px 之间犹豫时，请毫不犹豫地选择规范中定义的 8px。</li>
+1429:                <li><strong className="text-text-100">全局视野：</strong> 你正在设计的不是一个孤立的页面，而是整个庞大系统的一部分。每做一次特殊处理，都在增加系统的熵值。</li>

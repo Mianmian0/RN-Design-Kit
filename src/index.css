@@ -30,34 +30,35 @@
   --color-primary: #FF6C44;
   --color-primary-hover: #FF8A6B;
   --color-primary-active: #EA3D0F;
-  --color-primary-light: #3D1A10; /* Adjusted for dark mode */
+  --color-primary-soft: #3D1A10; /* Adjusted for dark mode */
+  --color-button-primary: linear-gradient(to bottom, #FF7A56 0%, #EA3D0F 100%);
 
   /* Semantic Colors - Success */
   --color-success: #52B82A;
   --color-success-hover: #66C83E;
   --color-success-active: #419421;
-  --color-success-light: #1A3010;
+  --color-success-soft: #1A3010;
 
   /* Semantic Colors - Warning */
   --color-warning: #FC9620;
   --color-warning-hover: #FDAE4F;
-  --color-warning-active: #D97E16;
-  --color-warning-light: #3D2408;
+  --color-warning-active: #E3871D;
+  --color-warning-soft: #3D2408;
 
   /* Semantic Colors - Error */
   --color-error: #D92D20;
   --color-error-hover: #E45449;
   --color-error-active: #B42318;
-  --color-error-light: #3D100C;
+  --color-error-soft: #3D100C;
 
   /* Semantic Colors - Info */
   --color-info: #2F80ED;
   --color-info-hover: #5A9CF1;
   --color-info-active: #2164C2;
-  --color-info-light: #0C203D;
+  --color-info-soft: #0C203D;
 
   /* Dark Mode Container Colors (Based on proposed right-side version) */
-  --color-bg-base: #141414;       /* 背景色 */
+  --color-bg-canvas: #141414;       /* 页面底色 */
   --color-bg-nav: #0C0C0C;        /* 顶部TAB栏 */
   --color-bg-tab: #202020;        /* 底部标签栏 */
   --color-bg-elevated-1: #262626; /* 背景上一层 */
@@ -66,16 +67,110 @@
 
   /* Text & Icon Colors (White with Opacity) */
   --color-text-100: #FFFFFF;
-  --color-text-50: rgba(255, 255, 255, 0.5);
-  --color-text-25: rgba(255, 255, 255, 0.25);
+  --color-text-50: #FFFFFF80;
+  --color-text-25: #FFFFFF40;
   
   /* Borders & Dividers */
-  --color-border-subtle: rgba(255, 255, 255, 0.08); /* 弱分割线/容器边框 */
-  --color-border-strong: rgba(255, 255, 255, 0.16); /* 强分割线/幽灵按钮边框 */
+  --color-border-subtle: #FFFFFF26; /* 弱分割线/容器边框 */
+  --color-border-strong: #FFFFFF4D; /* 强分割线/幽灵按钮边框 */
+  
+  /* Overlays */
+  --color-overlay-scrim: #000000CC; /* 弹窗遮罩 */
+}
+
+@utility text-headings-2xl {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@utility text-headings-lg {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@utility text-headings-base {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@utility text-headings-tiny {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@utility text-login-page-heading-xl {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@utility text-body-lg {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@utility text-body-base {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@utility text-body-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@utility text-body-xs {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@utility text-button-l {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@utility text-button-m {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@utility text-button-s {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@utility text-button-xs {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 15px;
 }
 
 body {
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-canvas);
   color: var(--color-text-100);
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
