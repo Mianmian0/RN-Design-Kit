@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Typography Line Heights: Y = 2 x Ceil(X/10) + X */
+  --font-size-tiny: 11px;
+  --line-height-tiny: 15px;
+  --font-size-xs: 12px;
+  --line-height-xs: 16px;
+  --font-size-sm: 14px;
+  --line-height-sm: 18px;
+  --font-size-base: 16px;
+  --line-height-base: 20px;
+  --font-size-lg: 18px;
+  --line-height-lg: 22px;
+  --font-size-xl: 20px;
+  --line-height-xl: 24px;
+  --font-size-2xl: 24px;
+  --line-height-2xl: 30px;
+  --font-size-3xl: 30px;
+  --line-height-3xl: 36px;
+  --font-size-4xl: 36px;
+  --line-height-4xl: 44px;
+  --font-size-5xl: 48px;
+  --line-height-5xl: 58px;
+
+  /* Brand Colors */
+  --color-primary: #FF6C44;
+  --color-primary-hover: #FF8A6B;
+  --color-primary-active: #EA3D0F;
+  --color-primary-light: #3D1A10; /* Adjusted for dark mode */
+
+  /* Semantic Colors - Success */
+  --color-success: #52B82A;
+  --color-success-hover: #66C83E;
+  --color-success-active: #419421;
+  --color-success-light: #1A3010;
+
+  /* Semantic Colors - Warning */
+  --color-warning: #FC9620;
+  --color-warning-hover: #FDAE4F;
+  --color-warning-active: #D97E16;
+  --color-warning-light: #3D2408;
+
+  /* Semantic Colors - Error */
+  --color-error: #D92D20;
+  --color-error-hover: #E45449;
+  --color-error-active: #B42318;
+  --color-error-light: #3D100C;
+
+  /* Semantic Colors - Info */
+  --color-info: #2F80ED;
+  --color-info-hover: #5A9CF1;
+  --color-info-active: #2164C2;
+  --color-info-light: #0C203D;
+
+  /* Dark Mode Container Colors (Based on proposed right-side version) */
+  --color-bg-base: #141414;       /* 背景色 */
+  --color-bg-nav: #0C0C0C;        /* 顶部TAB栏 */
+  --color-bg-tab: #202020;        /* 底部标签栏 */
+  --color-bg-elevated-1: #262626; /* 背景上一层 */
+  --color-bg-elevated-2: #373737; /* 背景上二层 */
+  --color-bg-elevated-3: #474747; /* 背景上三层 */
+
+  /* Text & Icon Colors (White with Opacity) */
+  --color-text-100: #FFFFFF;
+  --color-text-50: rgba(255, 255, 255, 0.5);
+  --color-text-25: rgba(255, 255, 255, 0.25);
+  
+  /* Borders & Dividers */
+  --color-border-subtle: rgba(255, 255, 255, 0.08); /* 弱分割线/容器边框 */
+  --color-border-strong: rgba(255, 255, 255, 0.16); /* 强分割线/幽灵按钮边框 */
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-100);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
