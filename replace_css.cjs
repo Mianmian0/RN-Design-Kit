@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+const fs = require('fs');
+
+let content = fs.readFileSync('src/index.css', 'utf8');
+
+const newCss = `@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,26 +10,24 @@
 
   /* Semantic Colors - Text */
   --color-text-primary: #FFFFFF;
-  --color-text-secondary: rgba(255, 255, 255, 0.5);
-  --color-text-disabled: rgba(255, 255, 255, 0.25);
+  --color-text-secondary: #FFFFFF80;
+  --color-text-disabled: #FFFFFF40;
   --color-text-brand: #FF6C44;
 
   /* Semantic Colors - Background */
-  --color-bg-base: #0E0E0E; /* Original global background */
   --color-bg-canvas: #141414;
   --color-bg-nav: #0C0C0C;
   --color-bg-tab: #202020;
   --color-bg-surface-1: #262626;
   --color-bg-surface-2: #373737;
   --color-bg-surface-3: #474747;
-  --color-bg-feedback-success: rgba(82, 184, 42, 0.2);
-  --color-bg-feedback-warning: rgba(252, 150, 32, 0.2);
-  --color-bg-feedback-error: rgba(217, 45, 32, 0.2);
+  --color-bg-feedback-success: #1A3010;
+  --color-bg-feedback-warning: #3D2408;
+  --color-bg-feedback-error: #3D100C;
 
   /* Semantic Colors - Action */
   --color-action-primary: #FF6C44;
   --color-action-primary-active: #EA3D0F;
-  --color-action-primary-soft: rgba(255, 108, 68, 0.2);
   --color-action-success: #52B82A;
   --color-action-success-active: #419421;
   --color-action-warning: #FC9620;
@@ -36,15 +38,7 @@
   /* Borders & Overlays */
   --color-border-subtle: #FFFFFF26;
   --color-border-strong: #FFFFFF4D;
-  --color-border-primary: #FF6C444D;
   --color-overlay-scrim: #000000CC;
-
-  /* Shadows */
-  --shadow-elevated-1: 0 4px 12px rgba(0,0,0,0.5);
-  --shadow-elevated-2: 0 8px 24px rgba(0,0,0,0.6);
-  --shadow-elevated-3: 0 16px 48px rgba(0,0,0,0.7);
-  --shadow-primary-glow: 0 0 20px rgba(255,108,68,0.2);
-  --shadow-primary-glow-hover: 0 0 30px rgba(255,108,68,0.4);
 
   /* Primitives (for specific uses like gradient) */
   --color-button-brand-primary: linear-gradient(to bottom, #FF7A56 0%, #EA3D0F 100%);
@@ -142,9 +136,13 @@
 }
 
 body {
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-canvas);
   color: var(--color-text-primary);
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+`;
+
+fs.writeFileSync('src/index.css', newCss);
+console.log('index.css updated.');
