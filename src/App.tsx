@@ -23,8 +23,8 @@ const ColorSwatch = ({ name, hex, className, textColor = "text-text-primary" }: 
 
 const ElevationCard = ({ level, hex, className, zIndex }: { level: string, hex: string, className: string, zIndex: number }) => (
   <div 
-    className={`${className} p-6 rounded-xl shadow-elevated-2  flex flex-col justify-between transition-transform hover:-translate-y-1`}
-    style={{ zIndex, position: 'relative', marginTop: zIndex > 0 ? '-2rem' : '0', width: `${100 - (zIndex * 5)}%`, margin: '0 auto' }}
+    className={`${className} p-4 rounded-xl shadow-elevated-2 flex flex-col justify-between transition-transform hover:-translate-y-1`}
+    style={{ zIndex, position: 'relative', marginTop: zIndex > 0 ? '-1rem' : '0', width: `${100 - (zIndex * 5)}%`, marginLeft: 'auto', marginRight: 'auto' }}
   >
     <span className="text-sm font-bold text-text-secondary">{level}</span>
     <span className="font-mono text-xs text-text-secondary mt-4">{hex}</span>
@@ -42,8 +42,8 @@ const TextOpacityRow = ({ label, opacity, className }: { label: string, opacity:
 );
 
 const RadiusCard = ({ size, px, twClass, desc, isCircle = false, isPill = false }: { size: string, px: string, twClass: string, desc: string, isCircle?: boolean, isPill?: boolean }) => (
-  <div className="flex items-center gap-6 p-4 border-b border-border-subtle/50 last:border-0 hover:bg-bg-surface-2/50 transition-colors rounded-xl">
-    <div className="w-20 h-20 flex items-center justify-center bg-bg-canvas  shrink-0">
+  <div className="flex items-center gap-6 p-4 border-b border-border-subtle/50 last:border-0 hover:bg-bg-surface-1/50 transition-colors rounded-xl">
+    <div className="w-20 h-20 flex items-center justify-center bg-bg-surface-1 rounded-xl shrink-0">
       <div className={`border-2 border-action-primary ${twClass} ${isCircle ? 'w-10 h-10' : isPill ? 'w-12 h-6' : 'w-10 h-10'} bg-action-primary-soft`}></div>
     </div>
     <div>
@@ -58,13 +58,13 @@ const RadiusCard = ({ size, px, twClass, desc, isCircle = false, isPill = false 
 );
 
 const SpacingRow = ({ name, size, px, rem }: { name: string, size: string, px: string, rem: string }) => (
-  <div className="grid grid-cols-[48px_80px_48px_64px_1fr] md:grid-cols-[56px_96px_56px_72px_1fr] gap-2 md:gap-4 items-center p-3 md:p-4 hover:bg-bg-surface-2/50 rounded-xl transition-colors border-b border-border-subtle/30 last:border-0">
+  <div className="grid grid-cols-[48px_80px_48px_64px_1fr] md:grid-cols-[56px_96px_56px_72px_1fr] gap-2 md:gap-4 items-center p-3 md:p-4 hover:bg-bg-surface-1/50 rounded-xl transition-colors border-b border-border-subtle/30 last:border-0">
     <div className="font-black text-sm md:text-base text-text-brand">{name}</div>
     <div className="font-mono text-sm text-text-primary font-bold">{size}</div>
     <div className="font-mono text-xs md:text-sm text-text-secondary">{px}</div>
     <div className="font-mono text-xs md:text-sm text-text-secondary">{rem}</div>
     <div className="flex items-center">
-      <div className="h-4 bg-action-primary-soft rounded-sm border border-border-primary" style={{ width: px }}></div>
+      <div className="h-4 bg-action-primary-soft rounded-sm border border-border-brand-subtle" style={{ width: px }}></div>
     </div>
   </div>
 );
@@ -83,7 +83,7 @@ export default function App() {
         
         {/* Header */}
         <header className="space-y-4 pt-8">
-          <div className="inline-block px-3 py-1 bg-action-primary-soft border border-border-primary rounded-full text-text-brand text-xs font-bold tracking-widest uppercase mb-4">
+          <div className="inline-block px-3 py-1 bg-action-primary-soft border border-border-brand-subtle rounded-full text-text-brand text-xs font-bold tracking-widest uppercase mb-4">
             iGaming Platform UI Kit
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-text-primary tracking-tight uppercase">
@@ -100,10 +100,10 @@ export default function App() {
             1. 字体排版 (Typography)
           </SectionTitle>
           
-          <div className="bg-bg-surface-1 p-8 rounded-2xl shadow-elevated-1 space-y-12">
+          <div className="bg-bg-canvas p-8 rounded-2xl shadow-elevated-1 space-y-12">
             
             {/* Line Height Rule Callout */}
-            <div className="bg-action-primary-soft border border-border-primary rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="bg-action-primary-soft border border-border-brand-subtle rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2">
                 <h3 className="text-headings-lg text-text-brand flex items-center gap-2">
                   <Ruler size={20} /> 字高计算规则 (Line Height Rule)
@@ -135,7 +135,7 @@ export default function App() {
                 { x: 36, y: 44 },
                 { x: 48, y: 58 }
               ].map((item) => (
-                <div key={item.x} className="bg-bg-canvas/50 border border-border-subtle/30 rounded-lg p-3 flex flex-col items-center">
+                <div key={item.x} className="bg-bg-surface-1 rounded-lg p-3 flex flex-col items-center">
                   <div className="text-[10px] text-text-disabled uppercase font-bold mb-1">{item.x}px</div>
                   <div className="text-lg font-black text-text-primary">{item.y}px</div>
                   <div className="text-[9px] text-text-brand/60 mt-1 font-mono">LH: {item.y}</div>
@@ -207,14 +207,14 @@ export default function App() {
           </SectionTitle>
           
           <div className="grid grid-cols-1 gap-6 mb-6">
-            <div className="bg-bg-surface-1 p-6 rounded-2xl ">
+            <div className="bg-bg-canvas p-6 rounded-2xl ">
               <h3 className="text-headings-2xl text-text-brand mb-2">Brand Text</h3>
               <div className="font-mono text-sm text-text-secondary mb-4">#FF6C44</div>
               <p className="text-sm text-text-secondary font-medium">用于赔率、余额、链接等需要强调的业务数据。</p>
             </div>
           </div>
 
-          <div className="bg-bg-surface-1 rounded-2xl  overflow-hidden">
+          <div className="bg-bg-canvas rounded-2xl  overflow-hidden">
             <TextOpacityRow label="一 文字 & 图标 (Primary Text)" opacity="#FFFFFF 100%" className="text-text-primary" />
             <TextOpacityRow label="二 文字 & 图标 (Secondary Text)" opacity="#FFFFFF 50%" className="text-text-secondary" />
             <TextOpacityRow label="三 文字 & 图标 (Disabled/Decorative)" opacity="#FFFFFF 25%" className="text-text-disabled" />
@@ -245,9 +245,9 @@ export default function App() {
                 <Layers size={16} /> 浮层体系 (Elevation Stack)
               </h3>
               <div className="bg-bg-canvas p-8 rounded-2xl  flex flex-col justify-center min-h-[300px]">
-                <ElevationCard level="画布上一层 (Level 1)" hex="#262626" className="bg-bg-surface-1 h-24" zIndex={0} />
-                <ElevationCard level="画布上二层 (Level 2)" hex="#373737" className="bg-bg-surface-2 h-24" zIndex={1} />
-                <ElevationCard level="画布上三层 (Level 3)" hex="#474747" className="bg-bg-surface-3 h-24" zIndex={2} />
+                <ElevationCard level="画布上一层 (Level 1)" hex="#202020" className="bg-bg-surface-1 h-28" zIndex={0} />
+                <ElevationCard level="画布上二层 (Level 2)" hex="#2B2B2B" className="bg-bg-surface-2 h-28" zIndex={1} />
+                <ElevationCard level="画布上三层 (Level 3)" hex="#404040" className="bg-bg-surface-3 h-28" zIndex={2} />
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function App() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <ColorSwatch name="基准色 (Primary)" hex="#FF6C44" className="bg-action-primary" />
                 <ColorSwatch name="点击 (Active)" hex="#EA3D0F" className="bg-action-primary-active" />
-                <ColorSwatch name="柔和背景 (Soft Bg)" hex="rgba(255,108,68,0.2)" className="bg-action-primary-soft" textColor="text-text-brand" />
+                <ColorSwatch name="柔和背景 (Soft Bg)" hex="#FF6C4433" className="bg-action-primary-soft" textColor="text-text-brand" />
                 <div className="flex flex-col gap-2">
                   <div className="h-24 w-full rounded-xl shadow-elevated-1 flex items-end p-3 " style={{ background: 'linear-gradient(to bottom, #FF6C44 0%, #EA3D0F 100%)' }}>
                     <span className="font-mono text-xs font-semibold text-white">Gradient</span>
@@ -281,7 +281,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4">
                   <ColorSwatch name="Base" hex="#52B82A" className="bg-action-success" />
                   <ColorSwatch name="Active" hex="#419421" className="bg-action-success-active" />
-                  <ColorSwatch name="Dark Bg" hex="rgba(82,184,42,0.2)" className="bg-bg-feedback-success" textColor="text-action-success" />
+                  <ColorSwatch name="Dark Bg" hex="#52B82A33" className="bg-bg-feedback-success" textColor="text-action-success" />
                 </div>
               </div>
               <div>
@@ -289,7 +289,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4">
                   <ColorSwatch name="Base" hex="#D92D20" className="bg-action-error" />
                   <ColorSwatch name="Active" hex="#B42318" className="bg-action-error-active" />
-                  <ColorSwatch name="Dark Bg" hex="rgba(217,45,32,0.2)" className="bg-bg-feedback-error" textColor="text-action-error" />
+                  <ColorSwatch name="Dark Bg" hex="#D92D2033" className="bg-bg-feedback-error" textColor="text-action-error" />
                 </div>
               </div>
             </div>
@@ -298,13 +298,13 @@ export default function App() {
 
         {/* 5. Border Radius (NEW) */}
         <section>
-          <SectionTitle description="扩展后的圆角阶梯。遵循「同心圆法则 (Concentric Circles)」：外层圆角 = 内层圆角 + 间距 (Padding)。丰富的阶梯确保在复杂嵌套中视觉的绝对和谐。">
+          <SectionTitle description="扩展后的圆角阶梯。遵循「同心圆法则 (Concentric Circles)」：容器外圆角半径 = 内部元素内圆角半径 + 内外元素的间距（Padding）。丰富的阶梯确保在复杂嵌套中视觉的绝对和谐。">
             5. 圆角系统 (Border Radius)
           </SectionTitle>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Radius Scale */}
-            <div className="bg-bg-surface-1 rounded-2xl  p-2">
+            <div className="bg-bg-canvas rounded-2xl  p-2">
               <RadiusCard size="极小圆角 (XS)" px="4px" twClass="rounded" desc="标签 (Tags)、提示框 (Tooltips)、复选框" />
               <RadiusCard size="小圆角 (SM)" px="6px" twClass="rounded-md" desc="小按钮、内部嵌套卡片、下拉菜单项" />
               <RadiusCard size="基础圆角 (MD)" px="8px" twClass="rounded-lg" desc="标准按钮、输入框、常规卡片 (原8px规范)" />
@@ -317,20 +317,20 @@ export default function App() {
 
             {/* Concentric Circles Demo */}
             <div className="space-y-6">
-              <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1">
+              <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1">
                 <h3 className="text-headings-lg text-text-primary mb-4 flex items-center gap-2">
                   <Square size={18} className="text-text-brand" /> 同心圆法则演示
                 </h3>
                 <p className="text-sm text-text-secondary mb-6 leading-relaxed">
                   当一个圆角容器嵌套在另一个圆角容器内时，为了视觉上的和谐，必须满足：<br/>
-                  <code className="text-text-brand font-mono bg-action-primary-soft px-2 py-1 rounded mt-2 inline-block">内圆角 = 外圆角 - 间距 (Padding)</code>
+                  <code className="text-text-brand font-mono bg-action-primary-soft px-2 py-1 rounded mt-2 inline-block">容器外圆角半径 = 内部元素内圆角半径 + 内外元素的间距（Padding）</code>
                 </p>
 
                 {/* Demo 1: 24px outer, 16px padding, 8px inner */}
                 <div className="mb-6">
                   <div className="text-xs text-text-secondary mb-2 font-mono">外层 24px (3xl) - 间距 16px (p-4) = 内层 8px (lg)</div>
-                  <div className="bg-bg-surface-2 p-4 rounded-3xl ">
-                    <div className="bg-action-primary-soft p-6 rounded-lg border border-border-primary flex items-center justify-center">
+                  <div className="bg-bg-surface-1 p-4 rounded-3xl ">
+                    <div className="bg-action-primary-soft p-6 rounded-lg border border-border-brand-subtle flex items-center justify-center">
                       <span className="text-text-brand font-bold text-sm">完美嵌套 (Perfect Nesting)</span>
                     </div>
                   </div>
@@ -339,7 +339,7 @@ export default function App() {
                 {/* Demo 2: 16px outer, 8px padding, 8px inner */}
                 <div>
                   <div className="text-xs text-text-secondary mb-2 font-mono">外层 16px (2xl) - 间距 8px (p-2) = 内层 8px (lg)</div>
-                  <div className="bg-bg-surface-2 p-2 rounded-2xl  w-2/3">
+                  <div className="bg-bg-surface-1 p-2 rounded-2xl  w-2/3">
                     <div className="bg-bg-feedback-success p-4 rounded-lg border border-action-success/30 flex items-center justify-center">
                       <span className="text-action-success font-bold text-sm">紧凑嵌套 (Compact)</span>
                     </div>
@@ -357,7 +357,7 @@ export default function App() {
           </SectionTitle>
 
           <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-8">
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1">
               <div className="grid grid-cols-[48px_80px_48px_64px_1fr] md:grid-cols-[56px_96px_56px_72px_1fr] gap-2 md:gap-4 items-center p-3 md:p-4 border-b border-border-subtle mb-2">
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">Name</div>
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">Class</div>
@@ -378,34 +378,34 @@ export default function App() {
 
             {/* Spacing Application Examples */}
             <div className="space-y-6">
-              <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1">
+              <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1">
                 <h3 className="text-sm font-bold text-text-primary uppercase tracking-wide mb-4">应用示例：卡片内部间距 (Card Padding)</h3>
-                <div className="bg-bg-surface-2 p-6 rounded-xl  relative">
-                  <div className="absolute top-0 left-0 w-full h-6 bg-action-primary-soft border-b border-border-primary flex items-center justify-center text-[10px] text-text-brand font-mono">p-6 (24px)</div>
-                  <div className="absolute top-0 left-0 w-6 h-full bg-action-primary-soft border-r border-border-primary flex items-center justify-center text-[10px] text-text-brand font-mono" style={{ writingMode: 'vertical-rl' }}>p-6 (24px)</div>
+                <div className="bg-bg-surface-1 p-6 rounded-xl  relative">
+                  <div className="absolute top-0 left-0 w-full h-6 bg-action-primary-soft border-b border-border-brand-subtle flex items-center justify-center text-[10px] text-text-brand font-mono">p-6 (24px)</div>
+                  <div className="absolute top-0 left-0 w-6 h-full bg-action-primary-soft border-r border-border-brand-subtle flex items-center justify-center text-[10px] text-text-brand font-mono" style={{ writingMode: 'vertical-rl' }}>p-6 (24px)</div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-bg-surface-3 rounded-full shrink-0 relative">
+                    <div className="w-12 h-12 bg-bg-surface-2 rounded-full shrink-0 relative">
                       <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-[1px] bg-action-primary-soft"></div>
                       <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-[10px] text-text-brand font-mono bg-bg-canvas px-1 rounded translate-x-1/2 -translate-y-full">gap-4 (16px)</div>
                     </div>
                     <div className="flex-1 space-y-2 relative">
-                      <div className="h-4 bg-bg-surface-3 rounded w-3/4"></div>
-                      <div className="absolute left-0 top-4 w-full h-2 bg-action-primary-soft border-y border-border-primary flex items-center justify-center text-[10px] text-text-brand font-mono">space-y-2 (8px)</div>
-                      <div className="h-3 bg-bg-surface-3 rounded w-1/2"></div>
+                      <div className="h-4 bg-bg-surface-2 rounded w-3/4"></div>
+                      <div className="absolute left-0 top-4 w-full h-2 bg-action-primary-soft border-y border-border-brand-subtle flex items-center justify-center text-[10px] text-text-brand font-mono">space-y-2 (8px)</div>
+                      <div className="h-3 bg-bg-surface-2 rounded w-1/2"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1">
+              <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1">
                 <h3 className="text-sm font-bold text-text-primary uppercase tracking-wide mb-4">应用示例：列表项间距 (List Item Gap)</h3>
-                <div className="bg-bg-surface-2 p-4 rounded-xl  flex flex-col gap-3 relative">
-                  <div className="h-10 bg-bg-surface-3 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 1</div>
-                  <div className="absolute left-1/2 top-14 -translate-x-1/2 w-10 h-3 bg-action-primary-soft border-y border-border-primary flex items-center justify-center text-[10px] text-text-brand font-mono z-10">gap-3 (12px)</div>
-                  <div className="h-10 bg-bg-surface-3 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 2</div>
-                  <div className="absolute left-1/2 top-[108px] -translate-x-1/2 w-10 h-3 bg-action-primary-soft border-y border-border-primary flex items-center justify-center text-[10px] text-text-brand font-mono z-10">gap-3 (12px)</div>
-                  <div className="h-10 bg-bg-surface-3 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 3</div>
+                <div className="bg-bg-surface-1 p-4 rounded-xl  flex flex-col gap-3 relative">
+                  <div className="h-10 bg-bg-surface-2 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 1</div>
+                  <div className="absolute left-1/2 top-14 -translate-x-1/2 w-10 h-3 bg-action-primary-soft border-y border-border-brand-subtle flex items-center justify-center text-[10px] text-text-brand font-mono z-10">gap-3 (12px)</div>
+                  <div className="h-10 bg-bg-surface-2 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 2</div>
+                  <div className="absolute left-1/2 top-[108px] -translate-x-1/2 w-10 h-3 bg-action-primary-soft border-y border-border-brand-subtle flex items-center justify-center text-[10px] text-text-brand font-mono z-10">gap-3 (12px)</div>
+                  <div className="h-10 bg-bg-surface-2 rounded-lg flex items-center px-3 text-sm text-text-secondary">List Item 3</div>
                 </div>
               </div>
             </div>
@@ -420,26 +420,26 @@ export default function App() {
 
           <div className="space-y-8">
             {/* Breakpoints Table */}
-            <div className="bg-bg-surface-1 rounded-2xl  overflow-hidden shadow-elevated-1">
-              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle bg-bg-surface-2/30">
+            <div className="bg-bg-canvas rounded-2xl  overflow-hidden shadow-elevated-1">
+              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle bg-bg-surface-1/30">
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">设备 (Device)</div>
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">断点 (Breakpoint)</div>
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">列数 (Columns)</div>
                 <div className="text-xs font-bold text-text-secondary uppercase tracking-wider">边距/间距 (Margin/Gutter)</div>
               </div>
-              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle/50 hover:bg-bg-surface-2/30 transition-colors">
+              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle/50 hover:bg-bg-surface-1/30 transition-colors">
                 <div className="font-bold text-text-primary">Mobile <span className="text-text-secondary font-normal text-sm ml-2 hidden md:inline">(默认)</span></div>
                 <div className="font-mono text-sm text-text-brand">&lt; 768px</div>
                 <div className="text-sm text-text-primary font-medium">4 列</div>
                 <div className="text-sm text-text-secondary">M: 16px / G: 12px</div>
               </div>
-              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle/50 hover:bg-bg-surface-2/30 transition-colors">
+              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 border-b border-border-subtle/50 hover:bg-bg-surface-1/30 transition-colors">
                 <div className="font-bold text-text-primary">Tablet <span className="text-text-secondary font-normal text-sm ml-2 hidden md:inline">(md)</span></div>
                 <div className="font-mono text-sm text-text-brand">≥ 768px</div>
                 <div className="text-sm text-text-primary font-medium">8 列</div>
                 <div className="text-sm text-text-secondary">M: 24px / G: 16px</div>
               </div>
-              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 hover:bg-bg-surface-2/30 transition-colors">
+              <div className="grid grid-cols-4 gap-4 p-4 md:p-6 hover:bg-bg-surface-1/30 transition-colors">
                 <div className="font-bold text-text-primary">Desktop <span className="text-text-secondary font-normal text-sm ml-2 hidden md:inline">(lg)</span></div>
                 <div className="font-mono text-sm text-text-brand">≥ 1024px</div>
                 <div className="text-sm text-text-primary font-medium">12 列</div>
@@ -448,10 +448,10 @@ export default function App() {
             </div>
 
             {/* Game Card Aspect Ratio Demo */}
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1">
               <h3 className="text-headings-lg text-text-primary mb-2">游戏卡片等比例缩放 (Aspect Ratio)</h3>
               <p className="text-sm text-text-secondary mb-8 leading-relaxed max-w-3xl">
-                针对游戏封面的特殊尺寸需求，我们使用 <code className="text-text-brand font-mono bg-action-primary-soft px-1.5 py-0.5 rounded border border-border-primary">aspect-[100/134]</code> 锁定比例。
+                针对游戏封面的特殊尺寸需求，我们使用 <code className="text-text-brand font-mono bg-action-primary-soft px-1.5 py-0.5 rounded border border-border-brand-subtle">aspect-[100/134]</code> 锁定比例。
                 移动端基准 100x134，桌面端基准 118x158。无论容器在栅格中如何拉伸，封面始终保持 1:1.34 的完美比例，绝不裁切变形。
               </p>
               
@@ -462,7 +462,7 @@ export default function App() {
                   <div className="flex flex-wrap gap-8 items-end">
                     {/* Mobile Size */}
                     <div className="flex flex-col gap-3">
-                      <div className="w-[100px] aspect-[100/134] bg-bg-surface-2 rounded-xl  relative overflow-hidden group shadow-elevated-1">
+                      <div className="w-[100px] aspect-[100/134] bg-bg-surface-1 rounded-xl  relative overflow-hidden group shadow-elevated-1">
                         <div className="absolute inset-0 bg-gradient-to-br from-action-primary/20 to-transparent"></div>
                         <div className="absolute inset-0 flex items-center justify-center text-text-primary font-bold text-sm">封面</div>
                       </div>
@@ -471,7 +471,7 @@ export default function App() {
 
                     {/* Desktop Size */}
                     <div className="flex flex-col gap-3">
-                      <div className="w-[118px] aspect-[100/134] bg-bg-surface-2 rounded-xl  relative overflow-hidden group shadow-elevated-1">
+                      <div className="w-[118px] aspect-[100/134] bg-bg-surface-1 rounded-xl  relative overflow-hidden group shadow-elevated-1">
                         <div className="absolute inset-0 bg-gradient-to-br from-action-primary/20 to-transparent"></div>
                         <div className="absolute inset-0 flex items-center justify-center text-text-primary font-bold text-base">封面</div>
                       </div>
@@ -486,7 +486,7 @@ export default function App() {
                   <p className="text-xs text-text-secondary mb-4">缩放浏览器窗口，观察卡片如何在不同断点下自适应宽度，同时保持高度比例完美一致。</p>
                   <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 p-4 md:p-6 bg-bg-canvas rounded-xl ">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div key={i} className="w-full aspect-[100/134] bg-bg-surface-2 rounded-xl  relative overflow-hidden group cursor-pointer hover:border-border-primary transition-colors shadow-md hover:shadow-primary-glow hover:-translate-y-1 duration-300">
+                      <div key={i} className="w-full aspect-[100/134] bg-bg-surface-1 rounded-xl  relative overflow-hidden group cursor-pointer hover:border-border-brand-subtle transition-colors shadow-md hover:shadow-primary-glow hover:-translate-y-1 duration-300">
                         <div className="absolute inset-0 bg-gradient-to-br from-action-primary/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
                           <div className="text-tiny md:text-xs font-bold text-white truncate">Game Title {i}</div>
@@ -508,7 +508,7 @@ export default function App() {
 
           <div className="space-y-8">
             {/* 8.1 尺寸基准 (Size Scale) */}
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1">
               <h3 className="text-headings-lg text-text-primary mb-2">8.1 绝对尺寸档位 (Size Tiers)</h3>
               <p className="text-sm text-text-secondary mb-6 leading-relaxed">
                 全站按钮高度被严格限制在以下 4 个档位。绝对禁止使用 42px、38px 等非标尺寸。
@@ -534,7 +534,7 @@ export default function App() {
                       <td className="py-4 font-mono text-sm text-text-primary">24px (px-6)</td>
                       <td className="py-4 text-sm text-text-secondary">全局主行动点 (Main CTA)、登录注册、底部悬浮操作区。</td>
                       <td className="py-4 text-right">
-                        <button className="h-12 px-6 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-button-l shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button L</button>
+                        <button className="h-12 px-6 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-button-l shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button L</button>
                       </td>
                     </tr>
                     <tr>
@@ -544,7 +544,7 @@ export default function App() {
                       <td className="py-4 font-mono text-sm text-text-primary">16px (px-4)</td>
                       <td className="py-4 text-sm text-text-secondary">标准按钮。用于大多数表单提交、弹窗确认/取消、卡片主操作。</td>
                       <td className="py-4 text-right">
-                        <button className="h-10 px-4 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-button-m shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button M</button>
+                        <button className="h-10 px-4 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-button-m shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button M</button>
                       </td>
                     </tr>
                     <tr>
@@ -554,7 +554,7 @@ export default function App() {
                       <td className="py-4 font-mono text-sm text-text-primary">12px (px-3)</td>
                       <td className="py-4 text-sm text-text-secondary">局部操作。如列表项跟随按钮、表格内操作、次级筛选器。</td>
                       <td className="py-4 text-right">
-                        <button className="h-8 px-3 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-md text-button-s shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button S</button>
+                        <button className="h-8 px-3 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-md text-button-s shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Button S</button>
                       </td>
                     </tr>
                     <tr>
@@ -564,7 +564,7 @@ export default function App() {
                       <td className="py-4 font-mono text-sm text-text-primary">8px (px-2)</td>
                       <td className="py-4 text-sm text-text-secondary">极致紧凑场景。如 Tag 标签式按钮、极小卡片内的附加操作。</td>
                       <td className="py-4 text-right">
-                        <button className="h-6 px-2 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded text-button-xs shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Btn XS</button>
+                        <button className="h-6 px-2 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded text-button-xs shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Btn XS</button>
                       </td>
                     </tr>
                   </tbody>
@@ -573,7 +573,7 @@ export default function App() {
             </div>
 
             {/* 8.2 变体与状态矩阵 (Variants & States) */}
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 overflow-x-auto">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 overflow-x-auto">
               <h3 className="text-headings-lg text-text-primary mb-2">8.2 变体与状态矩阵 (Variants & States Matrix)</h3>
               <p className="text-sm text-text-secondary mb-6 leading-relaxed">
                 所有按钮必须具备完整的交互状态反馈。禁止出现“悬浮没反应”或“禁用态看不清”的情况。
@@ -596,31 +596,31 @@ export default function App() {
                     <div className="font-bold text-text-primary">Primary CTA</div>
                     <div className="text-xs text-text-secondary">渐变强调，全局唯一</div>
                   </div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-brand-primary)] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)]">Primary</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-brand-fill-default)] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)]">Primary</button></div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#FF8566] to-[#F0552D] text-white font-bold rounded-lg text-sm shadow-[0_0_20px_rgba(255,108,68,0.5)]">Hover</button></div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-gradient-to-b from-[#E65A33] to-[#D13008] text-white font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75 shadow-[0_0_10px_rgba(255,108,68,0.4)]">Active</button></div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-brand-primary)] text-white font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
-                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)] hover:shadow-[0_0_20px_rgba(255,108,68,0.5)] active:shadow-[0_0_10px_rgba(255,108,68,0.4)] active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-[image:var(--color-button-brand-fill-default)] text-white font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-lg text-sm shadow-[0_0_15px_rgba(255,108,68,0.3)] hover:shadow-[0_0_20px_rgba(255,108,68,0.5)] active:shadow-[0_0_10px_rgba(255,108,68,0.4)] active:scale-[0.97] transition-all duration-75">Try Me</button></div>
                 </div>
 
                 {/* Secondary */}
                 <div className="grid grid-cols-6 gap-4 items-center py-4 border-b border-border-subtle/50">
                   <div>
                     <div className="font-bold text-text-primary">Secondary</div>
-                    <div className="text-xs text-text-secondary">次级操作，深灰填充</div>
+                    <div className="text-xs text-text-secondary">次级操作，深灰填充。优先使用，利用层级色差区分。</div>
                   </div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-2  text-text-primary font-bold rounded-lg text-sm">Secondary</button></div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-3  text-text-primary font-bold rounded-lg text-sm">Hover</button></div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-2 brightness-90  text-text-primary font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75">Active</button></div>
-                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-2  text-text-secondary font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
-                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-bg-surface-2 hover:bg-bg-surface-3 active:bg-bg-surface-2 active:brightness-90  text-text-primary font-bold rounded-lg text-sm active:scale-[0.97] transition-all duration-75">Try Me</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-1  text-text-primary font-bold rounded-lg text-sm">Secondary</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-2  text-text-primary font-bold rounded-lg text-sm">Hover</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-1 brightness-90  text-text-primary font-bold rounded-lg text-sm scale-[0.97] transition-all duration-75">Active</button></div>
+                  <div className="flex justify-center"><button className="h-10 px-4 bg-bg-surface-1  text-text-secondary font-bold rounded-lg text-sm opacity-50 cursor-not-allowed">Disabled</button></div>
+                  <div className="flex justify-center border-l border-border-subtle/50 pl-4"><button className="h-10 px-4 bg-bg-surface-1 hover:bg-bg-surface-2 active:bg-bg-surface-1 active:brightness-90  text-text-primary font-bold rounded-lg text-sm active:scale-[0.97] transition-all duration-75">Try Me</button></div>
                 </div>
 
                 {/* Ghost */}
                 <div className="grid grid-cols-6 gap-4 items-center py-4 border-b border-border-subtle/50">
                   <div>
                     <div className="font-bold text-text-primary">Ghost / Outline</div>
-                    <div className="text-xs text-text-secondary">幽灵按钮，透明底色</div>
+                    <div className="text-xs text-text-secondary">幽灵按钮，透明底色。仅当次级按钮与容器背景色无法区分时降级使用。</div>
                   </div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-transparent border border-border-strong text-text-primary font-bold rounded-lg text-sm">Ghost</button></div>
                   <div className="flex justify-center"><button className="h-10 px-4 bg-white/5 border border-border-strong text-text-primary font-bold rounded-lg text-sm">Hover</button></div>
@@ -632,22 +632,22 @@ export default function App() {
             </div>
 
             {/* 8.3 圆角环境绑定 (Contextual Radius) */}
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1">
               <h3 className="text-headings-lg text-text-primary mb-2">8.3 按钮圆角的环境绑定 (Contextual Radius)</h3>
               <p className="text-sm text-text-secondary mb-8 leading-relaxed max-w-3xl">
                 按钮的圆角<strong className="text-action-error">绝对不允许</strong>脱离环境单独设定。必须严格遵循“同心圆法则”：<br/>
-                <code className="text-text-brand font-mono bg-action-primary-soft px-1.5 py-0.5 rounded border border-border-primary">按钮圆角 = 容器圆角 - 容器内边距 (Padding)</code>
+                <code className="text-text-brand font-mono bg-action-primary-soft px-1.5 py-0.5 rounded border border-border-brand-subtle">容器外圆角 = 按钮圆角 + 容器内边距 (Padding)</code>
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* 场景 A: 嵌套在卡片中 */}
                 <div className="space-y-3">
                   <h4 className="text-sm font-bold text-text-secondary uppercase tracking-widest">场景 A: 嵌套在卡片中</h4>
-                  <div className="bg-bg-surface-2 p-4 rounded-2xl ">
-                    <div className="h-24 bg-bg-surface-3 rounded-xl mb-4 flex items-center justify-center text-text-secondary text-sm">Content Area</div>
+                  <div className="bg-bg-surface-1 p-4 rounded-2xl ">
+                    <div className="h-24 bg-bg-surface-2 rounded-xl mb-4 flex items-center justify-center text-text-secondary text-sm">Content Area</div>
                     <div className="flex gap-3">
                       <button className="flex-1 h-10 bg-bg-surface-2 hover:bg-bg-surface-3 active:bg-bg-surface-2 active:brightness-90 text-text-primary font-bold rounded-xl text-sm active:scale-[0.97] transition-all duration-75">取消</button>
-                      <button className="flex-1 h-10 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">确认提交</button>
+                      <button className="flex-1 h-10 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">确认提交</button>
                     </div>
                   </div>
                   <div className="text-xs text-text-secondary bg-bg-canvas p-3 rounded-lg ">
@@ -660,9 +660,9 @@ export default function App() {
                 {/* 场景 B: 胶囊型容器 */}
                 <div className="space-y-3">
                   <h4 className="text-sm font-bold text-text-secondary uppercase tracking-widest">场景 B: 胶囊型容器 (如搜索/筛选)</h4>
-                  <div className="bg-bg-surface-2 p-1.5 rounded-full  flex items-center mt-4">
+                  <div className="bg-bg-surface-1 p-1.5 rounded-full  flex items-center mt-4">
                     <div className="flex-1 px-4 text-text-secondary text-sm">输入搜索内容...</div>
-                    <button className="h-10 px-6 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-full text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">搜索</button>
+                    <button className="h-10 px-6 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-full text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">搜索</button>
                   </div>
                   <div className="text-xs text-text-secondary bg-bg-canvas p-3 rounded-lg  mt-4">
                     <span className="text-action-success font-bold">正确示范：</span><br/>
@@ -683,8 +683,8 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Standard Elevation */}
-            <div className="bg-bg-surface-1 p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-bg-surface-3 flex items-center justify-center mb-2">
+            <div className="bg-bg-canvas p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-bg-surface-1 flex items-center justify-center mb-2">
                 <Layers className="w-5 h-5 text-text-secondary" />
               </div>
               <h4 className="text-headings-base text-text-primary">Standard Elevation</h4>
@@ -695,7 +695,7 @@ export default function App() {
             </div>
 
             {/* Active / Glow State */}
-            <div className="bg-bg-surface-1 p-8 rounded-2xl border border-action-primary shadow-[0_0_24px_rgba(255,108,68,0.15)] flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden">
+            <div className="bg-bg-canvas p-8 rounded-2xl border border-action-primary shadow-[0_0_24px_rgba(255,108,68,0.15)] flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden">
               <div className="absolute inset-0 bg-action-primary-soft"></div>
               <div className="w-12 h-12 rounded-full bg-action-primary-soft flex items-center justify-center mb-2 relative z-10 shadow-[0_0_16px_rgba(255,108,68,0.4)]">
                 <CheckCircle2 className="w-5 h-5 text-text-brand" />
@@ -708,8 +708,8 @@ export default function App() {
             </div>
 
             {/* Hover Feedback */}
-            <div className="bg-bg-surface-1 p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:border-text-50 hover:shadow-[0_16px_40px_rgba(0,0,0,0.9)] cursor-pointer group">
-              <div className="w-12 h-12 rounded-full bg-bg-surface-3 flex items-center justify-center mb-2 group-hover:bg-bg-surface-2 transition-colors">
+            <div className="bg-bg-canvas p-8 rounded-2xl  shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:border-text-50 hover:shadow-[0_16px_40px_rgba(0,0,0,0.9)] cursor-pointer group">
+              <div className="w-12 h-12 rounded-full bg-bg-surface-1 flex items-center justify-center mb-2 group-hover:bg-bg-surface-2 transition-colors">
                 <MousePointer2 className="w-5 h-5 text-text-secondary group-hover:text-text-primary transition-colors" />
               </div>
               <h4 className="text-headings-base text-text-primary group-hover:text-white transition-colors">Hover Feedback</h4>
@@ -732,7 +732,7 @@ export default function App() {
             {/* 10.1 Navigation */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Top Nav */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Menu className="w-5 h-5 text-text-brand" /> 顶部导航栏 (Top App Bar)
                 </h3>
@@ -754,13 +754,13 @@ export default function App() {
                   </div>
                   {/* Mock content to show blur */}
                   <div className="p-4 pt-20 space-y-3 opacity-30">
-                    <div className="h-20 bg-bg-surface-2 rounded-lg"></div>
-                    <div className="h-20 bg-bg-surface-2 rounded-lg"></div>
+                    <div className="h-20 bg-bg-surface-1 rounded-lg"></div>
+                    <div className="h-20 bg-bg-surface-1 rounded-lg"></div>
                   </div>
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">毛玻璃效果 (Backdrop Blur)</strong>：深色模式下，纯色导航栏会显得极其沉闷。使用半透明背景加高斯模糊，能在长列表滚动时透出底层内容的色彩轮廓，保持空间层次感（Z-axis），这是 Apple HIG 强烈推荐的做法。<br/>
@@ -770,7 +770,7 @@ export default function App() {
               </div>
 
               {/* Bottom Tab Bar */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Home className="w-5 h-5 text-text-brand" /> 底部标签栏 (Bottom Tab Bar)
                 </h3>
@@ -794,7 +794,7 @@ export default function App() {
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">拇指热区 (Thumb Zone)</strong>：根据人体工学，屏幕底部是单手握持时最容易触达的区域。核心导航必须放在这里。<br/>
@@ -807,14 +807,14 @@ export default function App() {
             {/* 10.2 Data Entry */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Search Box */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Search className="w-5 h-5 text-text-brand" /> 搜索框 (Search Input)
                 </h3>
                 
                 {/* Demo */}
                 <div className="p-6 bg-bg-canvas rounded-xl  flex items-center justify-center">
-                  <div className="w-full max-w-sm h-10 bg-bg-surface-2 rounded-full  flex items-center px-4 focus-within:border-action-primary focus-within:ring-1 focus-within:ring-action-primary transition-all">
+                  <div className="w-full max-w-sm h-10 bg-bg-surface-1 rounded-full  flex items-center px-4 focus-within:border-action-primary focus-within:ring-1 focus-within:ring-action-primary transition-all">
                     <Search className="w-4 h-4 text-text-secondary mr-2" />
                     <input type="text" placeholder="搜索游戏、赛事..." className="flex-1 bg-transparent border-none outline-none text-sm text-text-primary placeholder:text-text-secondary" />
                     <XCircle className="w-4 h-4 text-text-disabled hover:text-text-secondary cursor-pointer transition-colors" />
@@ -822,7 +822,7 @@ export default function App() {
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">视觉启示 (Affordance)</strong>：搜索框几乎清一色使用<strong className="text-text-brand">胶囊圆角 (Pill)</strong>。这能在潜意识里将其与普通的表单输入框（通常是 8px/12px 圆角）区分开来，暗示这是一个全局探索入口。<br/>
@@ -832,7 +832,7 @@ export default function App() {
               </div>
 
               {/* Dropdown / Select */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <ChevronDown className="w-5 h-5 text-text-brand" /> 下拉筛选 (Dropdown)
                 </h3>
@@ -840,24 +840,24 @@ export default function App() {
                 {/* Demo */}
                 <div className="p-6 bg-bg-canvas rounded-xl  flex flex-col items-center justify-center h-48 relative">
                   {/* Trigger */}
-                  <button className="h-10 px-4 bg-bg-surface-2 hover:bg-bg-surface-3 active:bg-bg-surface-2 active:brightness-90 rounded-lg flex items-center gap-2 text-sm font-medium text-text-primary active:scale-[0.97] transition-all duration-75">
+                  <button className="h-10 px-4 bg-bg-surface-1 hover:bg-bg-surface-2 active:bg-bg-surface-1 active:brightness-90 rounded-lg flex items-center gap-2 text-sm font-medium text-text-primary active:scale-[0.97] transition-all duration-75">
                     全部游戏类型 <ChevronDown className="w-4 h-4 text-text-secondary" />
                   </button>
                   
                   {/* Popover Mock */}
-                  <div className="absolute top-20 w-48 bg-bg-surface-2 rounded-xl  shadow-[0_8px_30px_rgba(0,0,0,0.8)] overflow-hidden z-20">
+                  <div className="absolute top-20 w-48 bg-bg-surface-1 rounded-xl  shadow-[0_8px_30px_rgba(0,0,0,0.8)] overflow-hidden z-20">
                     <div className="p-1">
                       <div className="px-3 py-2 text-sm text-text-brand font-bold bg-action-primary-soft rounded-lg cursor-pointer flex justify-between items-center">
                         全部游戏类型 <CheckCircle2 className="w-4 h-4" />
                       </div>
-                      <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-surface-3 rounded-lg cursor-pointer transition-colors">体育赛事</div>
-                      <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-surface-3 rounded-lg cursor-pointer transition-colors">真人娱乐</div>
+                      <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-surface-2 rounded-lg cursor-pointer transition-colors">体育赛事</div>
+                      <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-surface-2 rounded-lg cursor-pointer transition-colors">真人娱乐</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">上下文保留 (Context Retention)</strong>：使用浮层而不是页面跳转，能大幅减少用户的认知负荷。<br/>
@@ -870,7 +870,7 @@ export default function App() {
             {/* 10.3 Overlays & Modals */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Center Modal */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <AlertTriangle className="w-5 h-5 text-text-brand" /> 中心弹窗 (Center Modal)
                 </h3>
@@ -878,7 +878,7 @@ export default function App() {
                 {/* Demo */}
                 <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-overlay-scrim backdrop-blur-sm z-10"></div>
-                  <div className="relative z-20 w-64 bg-bg-surface-2 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-5 flex flex-col gap-4">
+                  <div className="relative z-20 w-64 bg-bg-surface-1 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-5 flex flex-col gap-4">
                     <div className="text-center space-y-2">
                       <h4 className="text-headings-base text-text-primary">确认退出登录？</h4>
                       <p className="text-xs text-text-secondary">退出后将无法接收最新的赛事通知和中奖信息。</p>
@@ -891,7 +891,7 @@ export default function App() {
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">强阻断 (Blocking)</strong>：中心弹窗用于极其重要的二次确认。必须配备 <code className="text-text-brand">bg-overlay-scrim</code> 的全屏遮罩，强制聚焦用户视线。<br/>
@@ -901,7 +901,7 @@ export default function App() {
               </div>
 
               {/* Bottom Sheet */}
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Layers className="w-5 h-5 text-text-brand" /> 底部抽屉 (Bottom Sheet)
                 </h3>
@@ -909,7 +909,7 @@ export default function App() {
                 {/* Demo */}
                 <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col justify-end">
                   <div className="absolute inset-0 bg-overlay-scrim backdrop-blur-sm z-10"></div>
-                  <div className="relative z-20 w-full bg-bg-surface-2 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] p-6 pt-3 flex flex-col gap-4">
+                  <div className="relative z-20 w-full bg-bg-surface-1 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] p-6 pt-3 flex flex-col gap-4">
                     {/* Drag Handle */}
                     <div className="w-12 h-1.5 bg-border-subtle rounded-full mx-auto mb-2"></div>
                     
@@ -926,19 +926,19 @@ export default function App() {
                           className={`h-12 rounded-xl border font-bold flex items-center justify-center text-sm transition-all active:scale-[0.98] ${
                             activeAmount10_3 === amt
                               ? 'bg-action-primary-soft border-action-primary text-text-brand'
-                              : 'bg-bg-surface-1 border-border-subtle text-text-primary hover:bg-bg-surface-2'
+                              : 'bg-bg-surface-2 hover:bg-bg-surface-3 text-text-primary'
                           }`}
                         >
                           {amt}
                         </button>
                       ))}
                     </div>
-                    <button className="w-full h-12 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-base mt-2 shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">立即充值</button>
+                    <button className="w-full h-12 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-base mt-2 shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">立即充值</button>
                   </div>
                 </div>
 
                 {/* Rationale */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl border-l-4 border-action-primary">
+                <div className="bg-bg-surface-1 p-4 rounded-xl border-l-4 border-action-primary">
                   <h4 className="text-sm font-bold text-text-primary mb-1">设计依据 (Rationale)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     <strong className="text-text-primary">单手操作友好 (One-Handed Use)</strong>：现代 App 替代复杂中心弹窗的首选方案。从底部滑出，完美契合大屏手机的单手操作。<br/>
@@ -950,7 +950,7 @@ export default function App() {
 
             {/* 10.4 Overlay Sizing Guidelines (NEW) */}
             <div className="grid grid-cols-1 gap-8">
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Ruler className="w-5 h-5 text-text-brand" /> 弹窗与浮层尺寸规范 (Overlay Sizing Guidelines)
                 </h3>
@@ -963,7 +963,7 @@ export default function App() {
                     </h4>
                     <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex items-center justify-center">
                       <div className="absolute inset-0 bg-overlay-scrim backdrop-blur-sm z-10"></div>
-                      <div className="relative z-20 w-[80%] max-w-[280px] bg-bg-surface-2 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] flex flex-col max-h-[80%]">
+                      <div className="relative z-20 w-[80%] max-w-[280px] bg-bg-surface-1 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] flex flex-col max-h-[80%]">
                         <div className="p-4 border-b border-border-subtle shrink-0">
                           <h5 className="font-bold text-text-primary text-sm text-center">固定宽度，动态高度</h5>
                         </div>
@@ -973,7 +973,7 @@ export default function App() {
                           <p>滚动：内容过多时，头部和底部操作区固定，中间内容区滚动 (<code className="text-text-brand">overflow-y-auto</code>)。</p>
                         </div>
                         <div className="p-3 border-t border-border-subtle shrink-0 flex justify-center">
-                          <button className="w-full h-8 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white rounded-lg text-xs font-bold shadow-primary-glow active:scale-[0.97] transition-all duration-75">确定</button>
+                          <button className="w-full h-8 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white rounded-lg text-xs font-bold shadow-primary-glow active:scale-[0.97] transition-all duration-75">确定</button>
                         </div>
                       </div>
                     </div>
@@ -986,12 +986,12 @@ export default function App() {
                     </h4>
                     <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col items-center justify-start pt-8 gap-4">
                       {/* Single line toast */}
-                      <div className="w-[90%] max-w-[300px] min-h-[48px] bg-bg-surface-3 rounded-xl  shadow-elevated-1 flex items-center px-4">
+                      <div className="w-[90%] max-w-[300px] min-h-[48px] bg-bg-surface-1 rounded-xl  shadow-elevated-1 flex items-center px-4">
                         <CheckCircle2 className="w-4 h-4 text-action-success shrink-0 mr-2" />
                         <span className="text-xs text-text-primary font-medium">操作成功（单行文本）</span>
                       </div>
                       {/* Multi line toast */}
-                      <div className="w-[90%] max-w-[300px] min-h-[48px] bg-bg-surface-3 rounded-xl  shadow-elevated-1 flex items-start p-4">
+                      <div className="w-[90%] max-w-[300px] min-h-[48px] bg-bg-surface-1 rounded-xl  shadow-elevated-1 flex items-start p-4">
                         <AlertTriangle className="w-4 h-4 text-action-warning shrink-0 mr-2 mt-0.5" />
                         <span className="text-xs text-text-primary font-medium leading-relaxed">网络连接不稳定，请检查您的网络设置后重试。（多行文本，高度自适应）</span>
                       </div>
@@ -1010,16 +1010,16 @@ export default function App() {
                     </h4>
                     <div className="relative h-64 bg-bg-canvas rounded-xl  overflow-hidden flex flex-col justify-end">
                       <div className="absolute inset-0 bg-overlay-scrim backdrop-blur-sm z-10"></div>
-                      <div className="relative z-20 w-full bg-bg-surface-2 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] flex flex-col h-[85%]">
+                      <div className="relative z-20 w-full bg-bg-surface-1 rounded-t-3xl border-t border-border-subtle shadow-[0_-8px_30px_rgba(0,0,0,0.6)] flex flex-col h-[85%]">
                         <div className="w-12 h-1.5 bg-border-subtle rounded-full mx-auto mt-3 mb-2 shrink-0"></div>
                         <div className="px-6 pb-2 border-b border-border-subtle shrink-0">
                           <h5 className="font-bold text-text-primary text-sm">游戏筛选</h5>
                         </div>
                         <div className="p-6 overflow-y-auto text-xs text-text-secondary space-y-4">
-                          <div className="h-8 bg-bg-surface-3 rounded-lg"></div>
-                          <div className="h-8 bg-bg-surface-3 rounded-lg"></div>
-                          <div className="h-8 bg-bg-surface-3 rounded-lg"></div>
-                          <div className="h-8 bg-bg-surface-3 rounded-lg"></div>
+                          <div className="h-8 bg-bg-surface-2 rounded-lg"></div>
+                          <div className="h-8 bg-bg-surface-2 rounded-lg"></div>
+                          <div className="h-8 bg-bg-surface-2 rounded-lg"></div>
+                          <div className="h-8 bg-bg-surface-2 rounded-lg"></div>
                         </div>
                       </div>
                     </div>
@@ -1035,7 +1035,7 @@ export default function App() {
 
             {/* 10.5 Segmented Control / Tabs (NEW) */}
             <div className="grid grid-cols-1 gap-8">
-              <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
+              <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 flex flex-col gap-6">
                 <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                   <Layers className="w-5 h-5 text-text-brand" /> 分段控制器 / 标签栏 (Segmented Control)
                 </h3>
@@ -1046,8 +1046,8 @@ export default function App() {
                     <div className="text-sm font-bold text-action-error flex items-center gap-1"><XCircle className="w-4 h-4"/> 反面教材 (Zero-Padding Trap)</div>
                     <div className="p-6 bg-bg-canvas rounded-xl border border-action-error/30 flex items-center justify-center">
                       {/* 模拟截图中的错误做法：0 padding, 圆角割裂 */}
-                      <div className="w-full max-w-sm h-12 bg-bg-surface-2 rounded-xl flex">
-                        <div className="flex-1 bg-[image:var(--color-button-brand-primary)] rounded-l-xl flex items-center justify-center text-white font-bold text-sm gap-2">
+                      <div className="w-full max-w-sm h-12 bg-bg-surface-1 rounded-xl flex">
+                        <div className="flex-1 bg-[image:var(--color-button-brand-fill-default)] rounded-l-xl flex items-center justify-center text-white font-bold text-sm gap-2">
                           <Trophy className="w-4 h-4" /> High Roller
                         </div>
                         <div className="flex-1 flex items-center justify-center text-text-secondary font-medium text-sm gap-2">
@@ -1067,8 +1067,8 @@ export default function App() {
                   <div className="flex flex-col gap-3">
                     <div className="text-sm font-bold text-action-success flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> 最佳实践 (Track & Slider)</div>
                     <div className="p-6 bg-bg-canvas rounded-xl border border-action-success/30 flex items-center justify-center">
-                      {/* 正确做法：4px padding, 同心圆法则 (外12px, 内8px) */}
-                      <div className="w-full max-w-sm h-12 bg-bg-surface-2 rounded-xl p-1 flex relative">
+                      {/* 正确做法：4px padding, 同心圆法则 (内8px + 间距4px = 外12px) */}
+                      <div className="w-full max-w-sm h-12 bg-bg-surface-1 rounded-xl p-1 flex relative">
                         {[
                           { id: 'High Roller', icon: Trophy },
                           { id: 'Casino', icon: Layers },
@@ -1082,7 +1082,7 @@ export default function App() {
                               onClick={() => setActiveTab10_5(tab.id)}
                               className={`flex-1 flex items-center justify-center text-sm gap-2 relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
                                 isActive
-                                  ? 'bg-[image:var(--color-button-brand-primary)] text-white font-bold shadow-md'
+                                  ? 'bg-[image:var(--color-button-brand-fill-default)] text-white font-bold shadow-md'
                                   : 'text-text-secondary hover:text-text-primary font-medium'
                               }`}
                             >
@@ -1093,7 +1093,7 @@ export default function App() {
                       </div>
                     </div>
                     <p className="text-xs text-text-secondary">
-                      <strong className="text-action-success">设计依据：</strong>引入 <code className="text-text-brand">4px (p-1)</code> 的内边距，形成“轨道与滑块”的物理隐喻。严格遵守同心圆法则（外容器 12px - 内边距 4px = 滑块 8px），滑块保持完整的圆角矩形，视觉呼吸感极佳。
+                      <strong className="text-action-success">设计依据：</strong>引入 <code className="text-text-brand">4px (p-1)</code> 的内边距，形成“轨道与滑块”的物理隐喻。严格遵守同心圆法则（滑块 8px + 内边距 4px = 外容器 12px），滑块保持完整的圆角矩形，视觉呼吸感极佳。
                     </p>
                   </div>
                 </div>
@@ -1111,7 +1111,7 @@ export default function App() {
 
           <div className="space-y-8">
             {/* 11.1 Page & Surface Layout (NEW) */}
-            <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl shadow-elevated-1 flex flex-col gap-8">
+            <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl shadow-elevated-1 flex flex-col gap-8">
               <h3 className="text-headings-lg text-text-primary flex items-center gap-2">
                 <Layout className="w-5 h-5 text-text-brand" /> 页面与容器规范 (Page & Surface Layout)
               </h3>
@@ -1125,7 +1125,7 @@ export default function App() {
                   </div>
                   <div className="relative aspect-video bg-bg-canvas rounded-2xl border border-border-subtle overflow-hidden flex flex-col">
                     {/* Annotation Layer */}
-                    <div className="absolute inset-0 pointer-events-none border-2 border-dashed border-border-primary rounded-2xl m-4 flex items-start justify-start p-2">
+                    <div className="absolute inset-0 pointer-events-none border-2 border-dashed border-border-brand-subtle rounded-2xl m-4 flex items-start justify-start p-2">
                       <div className="bg-action-primary text-white text-[10px] px-1.5 py-0.5 rounded font-bold">spacing/16 (Margin)</div>
                     </div>
                     
@@ -1164,16 +1164,16 @@ export default function App() {
                   
                   <div className="grid grid-cols-1 gap-4">
                     {/* Level 1 */}
-                    <div className="bg-bg-surface-1 p-4 md:p-6 rounded-2xl border border-border-subtle flex items-center justify-between group hover:border-border-primary transition-colors">
+                    <div className="bg-bg-surface-1 p-4 md:p-6 rounded-2xl flex items-center justify-between group transition-colors">
                       <div className="space-y-1">
                         <div className="text-sm font-bold text-text-primary">Surface / Level 1</div>
                         <div className="text-[10px] text-text-secondary font-mono">bg/surface/1 | radius/16 | p/16-24</div>
                       </div>
-                      <div className="w-12 h-12 bg-bg-canvas rounded-xl border border-border-subtle flex items-center justify-center text-xs font-bold text-text-disabled">L1</div>
+                      <div className="w-12 h-12 bg-bg-canvas rounded-xl flex items-center justify-center text-xs font-bold text-text-disabled">L1</div>
                     </div>
 
                     {/* Level 2 */}
-                    <div className="bg-bg-surface-2 p-4 rounded-2xl flex items-center justify-between group hover:ring-1 hover:ring-action-primary/30 transition-all">
+                    <div className="bg-bg-surface-2 p-4 rounded-2xl flex items-center justify-between group transition-all">
                       <div className="space-y-1">
                         <div className="text-sm font-bold text-text-primary">Surface / Level 2</div>
                         <div className="text-[10px] text-text-secondary font-mono">bg/surface/2 | radius/16 | p/16</div>
@@ -1192,7 +1192,7 @@ export default function App() {
                   </div>
 
                   <p className="text-xs text-text-secondary leading-relaxed">
-                    <strong className="text-text-primary">用途：</strong>卡片、浮层、区块容器。通过背景色的明度提升来模拟物理世界中的“海拔”高度。Level 1 通常带有弱边边框。
+                    <strong className="text-text-primary">用途：</strong>卡片、浮层、区块容器。通过背景色的明度提升来模拟物理世界中的“海拔”高度。
                   </p>
                 </div>
               </div>
@@ -1201,7 +1201,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Betting Slip / Card Example */}
-            <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1 flex flex-col">
+            <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1 flex flex-col">
               <div className="flex justify-between items-center mb-6 border-b border-border-subtle pb-4">
                 <h3 className="text-headings-lg text-text-primary uppercase tracking-wide">Bet Slip</h3>
                 <span className="bg-action-primary-soft text-text-brand px-3 py-1 rounded-full text-xs font-bold">LIVE</span>
@@ -1209,27 +1209,27 @@ export default function App() {
               
               <div className="space-y-4 flex-1">
                 {/* Note: Outer is rounded-xl (12px), inner elements are rounded-lg (8px) or smaller */}
-                <div className="bg-bg-surface-2 p-4 rounded-xl hover:border-border-primary transition-colors cursor-pointer">
+                <div className="bg-bg-surface-1 p-4 rounded-xl hover:border-border-brand-subtle transition-colors cursor-pointer">
                   <div className="flex justify-between items-start mb-2">
                     <span className="text-sm font-bold text-text-primary">Manchester Utd vs Arsenal</span>
                     <span className="text-action-error text-xs font-bold flex items-center gap-1"><XCircle size={12}/> 89'</span>
                   </div>
                   <div className="flex justify-between items-center mt-4">
                     <span className="text-text-secondary text-sm font-medium">Match Winner</span>
-                    <div className="bg-bg-surface-3 px-4 py-2 rounded-lg text-text-brand font-extrabold text-lg">
+                    <div className="bg-bg-surface-2 px-4 py-2 rounded-lg text-text-brand font-extrabold text-lg">
                       2.45
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full py-4 rounded-xl text-white font-bold text-button-l tracking-wide shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008]">
+                <button className="w-full py-4 rounded-xl text-white font-bold text-button-l tracking-wide shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008]">
                   PLACE BET
                 </button>
               </div>
             </div>
 
             {/* Alerts & Feedback */}
-            <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1 space-y-4 flex flex-col">
+            <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1 space-y-4 flex flex-col">
               <h3 className="text-headings-lg text-text-primary uppercase tracking-wide border-b border-border-subtle pb-4 mb-6">System Feedback</h3>
               
               <div className="space-y-4 flex-1">
@@ -1263,7 +1263,7 @@ export default function App() {
             </div>
 
             {/* Complex Modal Example */}
-            <div className="bg-bg-surface-1 p-6 rounded-2xl  shadow-elevated-1 lg:col-span-2">
+            <div className="bg-bg-canvas p-6 rounded-2xl  shadow-elevated-1 lg:col-span-2">
               <div className="flex justify-between items-center mb-6 border-b border-border-subtle pb-4">
                 <h3 className="text-headings-lg text-text-primary uppercase tracking-wide">Complex Modal (Overlay Sizing & Segmented Control)</h3>
               </div>
@@ -1274,7 +1274,7 @@ export default function App() {
                   <div className="absolute inset-0 bg-overlay-scrim backdrop-blur-sm z-10"></div>
                   
                   {/* Modal Container */}
-                  <div className="relative z-20 w-[90%] max-w-[400px] bg-bg-surface-2 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] flex flex-col max-h-[90%]">
+                  <div className="relative z-20 w-[90%] max-w-[400px] bg-bg-surface-1 rounded-2xl  shadow-[0_16px_40px_rgba(0,0,0,0.8)] flex flex-col max-h-[90%]">
                     {/* Header */}
                     <div className="p-5 border-b border-border-subtle shrink-0 flex justify-between items-center">
                       <h4 className="font-bold text-text-primary text-lg">Deposit Funds</h4>
@@ -1291,7 +1291,7 @@ export default function App() {
                             onClick={() => setActiveTab11(tab)}
                             className={`flex-1 flex items-center justify-center text-sm relative z-10 transition-all duration-200 cursor-pointer rounded-lg ${
                               activeTab11 === tab
-                                ? 'bg-[image:var(--color-button-brand-primary)] text-white font-bold shadow-md'
+                                ? 'bg-[image:var(--color-button-brand-fill-default)] text-white font-bold shadow-md'
                                 : 'text-text-secondary hover:text-text-primary font-medium'
                             }`}
                           >
@@ -1318,7 +1318,7 @@ export default function App() {
                             className={`h-10 rounded-lg font-bold text-sm transition-all active:scale-[0.98] border ${
                               activeAmount11 === amt
                                 ? 'bg-action-primary-soft border-action-primary text-text-brand'
-                                : 'bg-bg-surface-3 hover:bg-bg-surface-1 border-border-subtle text-text-primary'
+                                : 'bg-bg-surface-2 hover:bg-bg-surface-3 text-text-primary'
                             }`}
                           >
                             {amt}
@@ -1329,15 +1329,15 @@ export default function App() {
                     
                     {/* Footer Actions */}
                     <div className="p-5 border-t border-border-subtle shrink-0 flex gap-3">
-                      <button className="flex-1 h-12 bg-transparent hover:bg-white/5 active:bg-white/10 border border-border-strong text-text-primary font-bold rounded-xl text-sm transition-all duration-75">Cancel</button>
-                      <button className="flex-[2] h-12 bg-[image:var(--color-button-brand-primary)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Confirm Deposit</button>
+                      <button className="flex-1 h-12 bg-bg-surface-2 hover:bg-bg-surface-3 active:bg-bg-surface-2 active:brightness-90 text-text-primary font-bold rounded-xl text-sm transition-all duration-75">Cancel</button>
+                      <button className="flex-[2] h-12 bg-[image:var(--color-button-brand-fill-default)] hover:from-[#FF8566] hover:to-[#F0552D] active:from-[#E65A33] active:to-[#D13008] text-white font-bold rounded-xl text-sm shadow-primary-glow hover:shadow-primary-glow-hover active:scale-[0.97] transition-all duration-75">Confirm Deposit</button>
                     </div>
                   </div>
                 </div>
 
                 {/* Explanations */}
                 <div className="lg:col-span-2 space-y-6">
-                  <div className="bg-bg-surface-2 p-4 rounded-xl ">
+                  <div className="bg-bg-surface-1 p-4 rounded-xl ">
                     <h4 className="text-sm font-bold text-text-brand mb-2 flex items-center gap-2"><Info size={16}/> 中心弹窗 vs 底部抽屉</h4>
                     <p className="text-xs text-text-secondary leading-relaxed">
                       <strong className="text-text-primary">中心弹窗 (Center Modal):</strong> 用于强阻断、需要用户集中注意力完成的独立任务（如：充值、确认删除、复杂表单）。<br/><br/>
@@ -1345,7 +1345,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="bg-bg-surface-2 p-4 rounded-xl ">
+                  <div className="bg-bg-surface-1 p-4 rounded-xl ">
                     <h4 className="text-sm font-bold text-text-brand mb-2 flex items-center gap-2"><XCircle size={16}/> 什么时候需要关闭按钮？</h4>
                     <p className="text-xs text-text-secondary leading-relaxed">
                       1. <strong className="text-text-primary">必须有:</strong> 当弹窗内容较长（可能滚动隐藏底部取消按钮），或者是一个纯信息展示/表单填写弹窗时，右上角必须提供关闭按钮。<br/>
@@ -1353,7 +1353,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="bg-bg-surface-2 p-4 rounded-xl ">
+                  <div className="bg-bg-surface-1 p-4 rounded-xl ">
                     <h4 className="text-sm font-bold text-text-brand mb-2 flex items-center gap-2"><Layers size={16}/> 分割线规范 (Dividers)</h4>
                     <p className="text-xs text-text-secondary leading-relaxed">
                       深色模式下的分割线容易与背景融为一体。我们定义了两种级别的分割线：<br/>
@@ -1375,7 +1375,7 @@ export default function App() {
             12. 协同与维护指南 (Collaboration & Maintenance)
           </SectionTitle>
           
-          <div className="bg-bg-surface-1 p-6 md:p-8 rounded-2xl  shadow-elevated-1 space-y-8">
+          <div className="bg-bg-canvas p-6 md:p-8 rounded-2xl  shadow-elevated-1 space-y-8">
             <div className="flex items-start gap-4 p-6 bg-bg-feedback-error/10 border border-action-error/30 rounded-xl">
               <AlertTriangle className="w-8 h-8 text-action-error shrink-0 mt-1" />
               <div>
@@ -1395,21 +1395,21 @@ export default function App() {
                 <Layers className="w-5 h-5 text-text-brand" /> 正确的构建思维：从底层容器到零碎组件
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-5 bg-bg-surface-2 rounded-xl ">
+                <div className="p-5 bg-bg-surface-1 rounded-xl ">
                   <div className="w-8 h-8 rounded-full bg-action-primary-soft text-text-brand flex items-center justify-center font-bold mb-3">1</div>
                   <h4 className="font-bold text-text-primary text-sm mb-2">确定底层容器 (Containers)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     首先确定页面布局、弹窗尺寸、卡片边界。严格遵守栅格系统和最大/最小宽度限制。不要急于填充内容，先确保骨架的稳固。
                   </p>
                 </div>
-                <div className="p-5 bg-bg-surface-2 rounded-xl ">
+                <div className="p-5 bg-bg-surface-1 rounded-xl ">
                   <div className="w-8 h-8 rounded-full bg-action-primary-soft text-text-brand flex items-center justify-center font-bold mb-3">2</div>
                   <h4 className="font-bold text-text-primary text-sm mb-2">应用基础组件 (Foundations)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
                     使用规范中已有的导航栏、标签页、按钮组。如果规范中已经有了“次级按钮”，就不要自己再调一个“浅灰色按钮”。复用是保持一致性的唯一途径。
                   </p>
                 </div>
-                <div className="p-5 bg-bg-surface-2 rounded-xl ">
+                <div className="p-5 bg-bg-surface-1 rounded-xl ">
                   <div className="w-8 h-8 rounded-full bg-action-primary-soft text-text-brand flex items-center justify-center font-bold mb-3">3</div>
                   <h4 className="font-bold text-text-primary text-sm mb-2">填充零碎元素 (Fragments)</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">
@@ -1419,7 +1419,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-bg-surface-2 p-6 rounded-xl border-l-4 border-action-success">
+            <div className="bg-bg-surface-1 p-6 rounded-xl border-l-4 border-action-success">
               <h3 className="text-headings-base text-text-primary mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-action-success" /> 专业使用指南
               </h3>
